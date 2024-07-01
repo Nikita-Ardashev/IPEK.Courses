@@ -1,0 +1,21 @@
+@import '../../../../../variables.styl';
+
+.constructor-dragline {
+    width: 16px;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    height: 100%;
+
+    img {
+        width: 24px;
+        height: 24px;
+        pointer-events: none;
+    }
+
+    &:active {
+        cursor: grabbing;
+    }
+}

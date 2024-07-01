@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "UHbIKPUxn8JYzISEP4xjek3WrTHK3DqFVUffPk123iA=",
+  "Source": "IPEK.Courses.Server",
+  "BasePath": "_content/IPEK.Courses.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\User\\projects\\IPEK.Courses\\ipek.courses.client\\ipek.courses.client.esproj",
+      "Version": 2,
+      "Source": "ipek.courses.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
