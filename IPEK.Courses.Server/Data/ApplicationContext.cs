@@ -21,13 +21,10 @@ namespace IPEK.Courses.Server.Data
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        { 
+        {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<User>()
-                .HasOne(x => x.UserGroup)
-                .WithMany(x => x.Students)
-                .HasForeignKey(x => x.GroupId);
+            modelBuilder.Entity<User>();
         }
 
         public virtual DbSet<Group> Groups { get; set; }
