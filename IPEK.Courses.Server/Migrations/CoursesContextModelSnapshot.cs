@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IPEK.Courses.Server.Migrations
 {
-    [DbContext(typeof(CoursesContext))]
+    [DbContext(typeof(ApplicationDBContext))]
     partial class CoursesContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

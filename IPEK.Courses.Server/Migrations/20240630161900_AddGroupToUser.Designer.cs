@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IPEK.Courses.Server.Migrations
 {
-    [DbContext(typeof(CoursesContext))]
+    [DbContext(typeof(ApplicationDBContext))]
     [Migration("20240630161900_AddGroupToUser")]
     partial class AddGroupToUser
     {

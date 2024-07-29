@@ -1,57 +1,82 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\projects\\IPEK.Courses\\",
+  "WorkspaceRootPath": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\user\\projects\\ipek.courses\\ipek.courses.server\\migrations\\coursescontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\migrations\\coursescontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{874FAAB7-CA22-41E7-99A4-61EAEC5F103B}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{874FAAB7-CA22-41E7-99A4-61EAEC5F103B}|C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{874FAAB7-CA22-41E7-99A4-61EAEC5F103B}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{874FAAB7-CA22-41E7-99A4-61EAEC5F103B}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\user\\projects\\ipek.courses\\ipek.courses.server\\migrations\\20240630153134_initialschooldb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\migrations\\20240630153134_initialschooldb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\user\\projects\\ipek.courses\\ipek.courses.server\\migrations\\20240630161900_addgrouptouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\migrations\\20240630161900_addgrouptouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\user\\projects\\ipek.courses\\ipek.courses.server\\models\\usermodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\models\\usermodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\user\\projects\\ipek.courses\\ipek.courses.server\\models\\groupmodels\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\models\\groupmodels\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\user\\projects\\ipek.courses\\ipek.courses.server\\data\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\data\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\user\\projects\\ipek.courses\\ipek.courses.server\\models\\usermodels\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\models\\usermodels\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\user\\projects\\ipek.courses\\ipek.courses.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\user\\projects\\ipek.courses\\ipek.courses.server\\models\\coursemodels\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\models\\coursemodels\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\user\\projects\\ipek.courses\\ipek.courses.server\\models\\coursemodels\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\models\\coursemodels\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\user\\projects\\ipek.courses\\ipek.courses.server\\models\\coursemodels\\code.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\models\\coursemodels\\code.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\entities\\studentgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\entities\\studentgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\user\\projects\\ipek.courses\\ipek.courses.server\\models\\coursemodels\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\models\\coursemodels\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\entities\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\entities\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|I:\\vs\\visual studio\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\migrations\\20240630161900_addgrouptouser.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\migrations\\20240630161900_addgrouptouser.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\migrations\\20240630153134_initialschooldb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\migrations\\20240630153134_initialschooldb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\entities\\codetask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\entities\\codetask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\entities\\theorytask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\entities\\theorytask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\entities\\testquestionmaping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\entities\\testquestionmaping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\entities\\testtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\entities\\testtask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\entities\\testquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\entities\\testquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\viewmodels\\coursemodels\\theory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\viewmodels\\coursemodels\\theory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\viewmodels\\coursemodels\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\viewmodels\\coursemodels\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\viewmodels\\coursemodels\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\viewmodels\\coursemodels\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\viewmodels\\coursemodels\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\viewmodels\\coursemodels\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\viewmodels\\coursemodels\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\viewmodels\\coursemodels\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|c:\\users\\ankud1nov\\source\\repos\\ipek.courses\\ipek.courses.server\\domain\\viewmodels\\coursemodels\\code.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30DB99E4-8732-4775-9564-29BDA0E2B997}|IPEK.Courses.Server\\IPEK.Courses.Server.csproj|solutionrelative:ipek.courses.server\\domain\\viewmodels\\coursemodels\\code.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -61,154 +86,90 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Program.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Program.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T15:30:54.722Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "20240630161900_AddGroupToUser.cs",
-              "DocumentMoniker": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Migrations\\20240630161900_AddGroupToUser.cs",
-              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Migrations\\20240630161900_AddGroupToUser.cs",
-              "ToolTip": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Migrations\\20240630161900_AddGroupToUser.cs",
-              "RelativeToolTip": "IPEK.Courses.Server\\Migrations\\20240630161900_AddGroupToUser.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAgwBkAAAASAAAA",
+              "Title": "ApplicationDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Data\\ApplicationDBContext.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Data\\ApplicationDBContext.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Data\\ApplicationDBContext.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Data\\ApplicationDBContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T16:19:00.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Test.cs",
-              "DocumentMoniker": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\CourseModels\\Test.cs",
-              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Models\\CourseModels\\Test.cs",
-              "ToolTip": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\CourseModels\\Test.cs",
-              "RelativeToolTip": "IPEK.Courses.Server\\Models\\CourseModels\\Test.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T15:48:49.412Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Question.cs",
-              "DocumentMoniker": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\CourseModels\\Question.cs",
-              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Models\\CourseModels\\Question.cs",
-              "ToolTip": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\CourseModels\\Question.cs",
-              "RelativeToolTip": "IPEK.Courses.Server\\Models\\CourseModels\\Question.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T15:48:48.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Course.cs",
-              "DocumentMoniker": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\CourseModels\\Course.cs",
-              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Models\\CourseModels\\Course.cs",
-              "ToolTip": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\CourseModels\\Course.cs",
-              "RelativeToolTip": "IPEK.Courses.Server\\Models\\CourseModels\\Course.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T15:48:40.152Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Code.cs",
-              "DocumentMoniker": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\CourseModels\\Code.cs",
-              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Models\\CourseModels\\Code.cs",
-              "ToolTip": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\CourseModels\\Code.cs",
-              "RelativeToolTip": "IPEK.Courses.Server\\Models\\CourseModels\\Code.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T15:47:28.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T14:51:55.37Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\UserModels\\User.cs",
-              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Models\\UserModels\\User.cs",
-              "ToolTip": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\UserModels\\User.cs",
-              "RelativeToolTip": "IPEK.Courses.Server\\Models\\UserModels\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAcAAAA",
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\Entities\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\ApplicationUser.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\Entities\\ApplicationUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T15:39:29.719Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Profile.cs",
-              "DocumentMoniker": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\UserModels\\Profile.cs",
-              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Models\\UserModels\\Profile.cs",
-              "ToolTip": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\UserModels\\Profile.cs",
-              "RelativeToolTip": "IPEK.Courses.Server\\Models\\UserModels\\Profile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T15:39:35.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CoursesContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Migrations\\CoursesContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Migrations\\CoursesContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Migrations\\CoursesContextModelSnapshot.cs",
-              "RelativeToolTip": "IPEK.Courses.Server\\Migrations\\CoursesContextModelSnapshot.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T15:34:36.673Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20240630153134_InitialSchoolDB.cs",
-              "DocumentMoniker": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Migrations\\20240630153134_InitialSchoolDB.cs",
-              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Migrations\\20240630153134_InitialSchoolDB.cs",
-              "ToolTip": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Migrations\\20240630153134_InitialSchoolDB.cs",
-              "RelativeToolTip": "IPEK.Courses.Server\\Migrations\\20240630153134_InitialSchoolDB.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T15:34:24.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T16:29:51.422Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Group.cs",
-              "DocumentMoniker": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\GroupModels\\Group.cs",
-              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Models\\GroupModels\\Group.cs",
-              "ToolTip": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Models\\GroupModels\\Group.cs",
-              "RelativeToolTip": "IPEK.Courses.Server\\Models\\GroupModels\\Group.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAfAAAA",
+              "Title": "StudentGroup.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\StudentGroup.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\Entities\\StudentGroup.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\StudentGroup.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\Entities\\StudentGroup.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T15:33:43.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T16:52:41.833Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Program.cs",
-              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Program.cs",
-              "RelativeToolTip": "IPEK.Courses.Server\\Program.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAAADQAAAAKAAAA",
+              "DocumentIndex": 5,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\Course.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\Entities\\Course.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\Course.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\Entities\\Course.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T15:30:54.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T17:07:47.411Z",
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAcAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2024-07-29T17:58:57.529Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -224,27 +185,159 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ApplicationContext.cs",
-              "DocumentMoniker": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Data\\ApplicationContext.cs",
-              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Data\\ApplicationContext.cs",
-              "ToolTip": "C:\\Users\\User\\projects\\IPEK.Courses\\IPEK.Courses.Server\\Data\\ApplicationContext.cs",
-              "RelativeToolTip": "IPEK.Courses.Server\\Data\\ApplicationContext.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBwAAAAlAAAA",
+              "DocumentIndex": 6,
+              "Title": "20240630161900_AddGroupToUser.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Migrations\\20240630161900_AddGroupToUser.Designer.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Migrations\\20240630161900_AddGroupToUser.Designer.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Migrations\\20240630161900_AddGroupToUser.Designer.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Migrations\\20240630161900_AddGroupToUser.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T14:51:55.37Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T17:49:51.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20240630153134_InitialSchoolDB.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Migrations\\20240630153134_InitialSchoolDB.Designer.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Migrations\\20240630153134_InitialSchoolDB.Designer.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Migrations\\20240630153134_InitialSchoolDB.Designer.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Migrations\\20240630153134_InitialSchoolDB.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T17:49:40.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CodeTask.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\CodeTask.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\Entities\\CodeTask.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\CodeTask.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\Entities\\CodeTask.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T17:47:36.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TheoryTask.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\TheoryTask.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\Entities\\TheoryTask.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\TheoryTask.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\Entities\\TheoryTask.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T17:46:20.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TestQuestionMaping.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\TestQuestionMaping.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\Entities\\TestQuestionMaping.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\TestQuestionMaping.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\Entities\\TestQuestionMaping.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T17:33:56.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TestTask.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\TestTask.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\Entities\\TestTask.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\TestTask.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\Entities\\TestTask.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T17:29:37.481Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "Microsoft.Common.CurrentVersion.targets",
-              "DocumentMoniker": "I:\\vs\\visual studio\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ToolTip": "I:\\vs\\visual studio\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AQIAAHQUAAAAAAAAAAD4v4UUAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-06-27T11:52:46.099Z",
-              "EditorCaption": ""
+              "Title": "TestQuestion.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\TestQuestion.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\Entities\\TestQuestion.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\Entities\\TestQuestion.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\Entities\\TestQuestion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T17:33:29.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Theory.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Theory.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Theory.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Theory.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Theory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T17:04:18.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Theme.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Theme.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Theme.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Theme.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Theme.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T17:04:17.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Test.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Test.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Test.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Test.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Test.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T17:03:58.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Question.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Question.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Question.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Question.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T17:00:25.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Course.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Course.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Course.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Course.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T17:00:18.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Code.cs",
+              "DocumentMoniker": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Code.cs",
+              "RelativeDocumentMoniker": "IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Code.cs",
+              "ToolTip": "C:\\Users\\Ankud1nov\\source\\repos\\IPEK.Courses\\IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Code.cs",
+              "RelativeToolTip": "IPEK.Courses.Server\\Domain\\ViewModels\\CourseModels\\Code.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T17:00:11.487Z"
             }
           ]
         }

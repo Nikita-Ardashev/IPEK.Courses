@@ -1,5 +1,6 @@
 using IPEK.Courses.Server.Data;
-using IPEK.Courses.Server.Models.UserModels;
+using IPEK.Courses.Server.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,10 +13,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<CoursesContext>(options =>
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("CoursesContextSQLite")));
 
-    builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDBContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
 
 var app = builder.Build();
 
@@ -37,13 +44,14 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    var context = services.GetRequiredService<CoursesContext>();
+    var context = services.GetRequiredService<ApplicationDBContext>();
     context.Database.EnsureCreated();
     // DbInitializer.Initialize(context);
 }
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
