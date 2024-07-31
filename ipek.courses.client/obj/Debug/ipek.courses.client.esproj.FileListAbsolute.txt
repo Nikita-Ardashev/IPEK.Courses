@@ -1,1 +1,2 @@
 C:\Users\User\projects\IPEK.Courses\ipek.courses.client\obj\Debug\ipek.courses.client.esproj.CoreCompileInputs.cache
+C:\Users\Ankud1nov\Source\Repos\IPEK.Courses\ipek.courses.client\obj\Debug\ipek.courses.client.esproj.CoreCompileInputs.cache
