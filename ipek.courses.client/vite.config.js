@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from 'node:url';
 
 import plugin from '@vitejs/plugin-react';
+import autoprefixer from 'autoprefixer';
 import child_process from 'child_process';
 import fs from 'fs';
 import path from 'path';
@@ -36,6 +37,17 @@ const target = env.ASPNETCORE_HTTPS_PORT
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	css: {
+		preprocessorOptions: {
+			stylus: {
+				use: [],
+				import: [],
+			},
+		},
+		postcss: {
+			plugins: [autoprefixer({})],
+		},
+	},
 	plugins: [plugin(), tsconfigPaths()],
 	resolve: {
 		alias: {
