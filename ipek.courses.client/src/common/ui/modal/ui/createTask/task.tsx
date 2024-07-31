@@ -2,13 +2,14 @@ import './task.styl';
 
 import React, { useMemo, useState } from 'react';
 
-import { getLanguages } from '@/common/utils/getLanguages';
+import { langTool } from '@/store/utils';
 
 import { type IModalCreateCourseTheme, type IModalTypeCreateTheme } from '../../model/types';
 import ModalField from '../field/field';
 import ModalSwitchBtn from '../switchBtn/switchBtn';
 
 const ModalCourseTask = ({ type, onCreate }: IModalCreateCourseTheme): React.JSX.Element => {
+	const langNames = langTool.getLangNames;
 	const [modalType, setModalType] = useState<IModalTypeCreateTheme>(type);
 	const modal = useMemo(() => {
 		switch (modalType) {
@@ -21,7 +22,7 @@ const ModalCourseTask = ({ type, onCreate }: IModalCreateCourseTheme): React.JSX
 				return (
 					<div className='modal-fields'>
 						<ModalField placeholder='Название' />
-						<ModalField value='Язык программирования' dropdownItems={getLanguages()} />
+						<ModalField value='Язык программирования' dropdownItems={langNames} />
 					</div>
 				);
 		}

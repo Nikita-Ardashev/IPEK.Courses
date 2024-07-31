@@ -8,7 +8,7 @@ import { type IConstructorTheory } from '../model/types';
 const ConstructorTheory = ({ isReadonly = false, content }: IConstructorTheory): React.JSX.Element => {
 	return (
 		<div className='constructor-theory'>
-			<BoxQuill />
+			<BoxQuill isReadonly={isReadonly} />
 		</div>
 	);
 };

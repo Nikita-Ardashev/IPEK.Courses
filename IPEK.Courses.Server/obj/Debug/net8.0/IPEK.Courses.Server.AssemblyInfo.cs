@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IPEK.Courses.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3010f57433e74917b0db86103974d29955e74948")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7d41be05992db39370342cd2c4483ace7b5b917")]
 [assembly: System.Reflection.AssemblyProductAttribute("IPEK.Courses.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IPEK.Courses.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

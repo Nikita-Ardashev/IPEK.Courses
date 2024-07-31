@@ -11,19 +11,6 @@ import Modal from '@/common/ui/modal/modal';
 const CourseEdit = (): React.JSX.Element => {
 	const [isViewAddThemeModal, setIsViewAddThemeModal] = useState<boolean>(false);
 	const [dataCourse, setDataCourse] = useState<ICourseThemes | null>(null);
-	const [searchParams] = useSearchParams();
-	const id = searchParams.get('id');
-
-	useEffect(() => {
-		if (id === null) return;
-		courseThemes(Number(id))
-			.then((r) => {
-				setDataCourse(r);
-			})
-			.catch((e) => {
-				console.error(e);
-			});
-	}, [id]);
 	return (
 		<div className='edit'>
 			{isViewAddThemeModal && (
@@ -44,14 +31,14 @@ const CourseEdit = (): React.JSX.Element => {
 					// onClick={() => {
 					// 	setIsViewAddThemeModal(true);
 					// }}
-					link={'/course/constructor/code?courseId=' + id}
+					link={'/course/constructor/code?courseId='}
 				/>
 			</div>
 			<div className='edit__list'>
 				{dataCourse?.study_card.map((s, i) => {
 					return (
 						<ListItem
-							to={`/course/constructor/code?courseId=${id}&studieId=${s.study_id}`}
+							to={`/course/constructor/code?courseId=${''}&studieId=${''}`}
 							key={s.name + i}
 							text={s.name}
 							index={i}
