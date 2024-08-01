@@ -1,9 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace IPEK.Courses.Server.Domain.Entities
+﻿namespace IPEK.Courses.Server.Domain.Entities
 {
     public class TestQuestionMaping
     {
+        public Guid Id { get; set; }
         public Guid TestId { get; set; }
         public virtual TestQuestion TestQuestion { get; set; }
         public Guid TestQuestionId { get; set; }
