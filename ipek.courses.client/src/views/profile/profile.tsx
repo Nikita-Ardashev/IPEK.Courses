@@ -1,27 +1,17 @@
 import './profile.styl';
 
-// import iconPencil from '@img/account/pencil.svg';
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 
-import CourseCard from '@/common/ui/courseCard/card';
-import GroupCard from '@/common/ui/groupCard/card';
-// import LargeButton from '@/common/ui/largeButton/largeButton';
-import Preloader from '@/common/ui/preloader/preloader';
-
-import { GlobalContext } from '../globalContext';
 const Profile = (): React.JSX.Element => {
-	const globalContext = useContext(GlobalContext);
-	const user = globalContext?.user;
-	const isAdmin = user?.is_admin ?? false;
+	const isAdmin = false;
 
-	// if (false) return <Preloader />;
 	return (
 		<div className='profile'>
 			{isAdmin && (
 				<div className='profile__info'>
 					<div>
-						<h2>{user?.name}</h2>
-						<p>{user?.group}</p>
+						<h2></h2>
+						<p></p>
 					</div>
 					{/* <LargeButton img={iconPencil} /> */}
 				</div>

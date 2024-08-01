@@ -31,15 +31,6 @@
     .constructor-code__questions {
         gap: 16px;
 
-        > div {
-            &:first-child {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-        }
-
         h3 {
             font-family: Sans;
             font-size: 32px;
@@ -52,7 +43,15 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
-            height: 100%;
+
+            > div {
+                &:first-child {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
 
             > textarea {
                 font-family: Roboto;

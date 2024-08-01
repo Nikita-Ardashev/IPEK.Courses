@@ -1,9 +1,5 @@
 import 'quill/dist/quill.snow.css';
 
-import hljs from 'highlight.js';
-
-import { getLanguages } from '@/common/utils/getLanguages';
-
 const toolbarOptions = [
 	[{ color: [] }, { background: [] }],
 	['bold', 'italic', 'underline', 'strike', 'clean'],
@@ -14,24 +10,17 @@ const toolbarOptions = [
 	['image', 'video'],
 ];
 
-interface IObjLangs {
-	key: string;
-	label: string;
-}
-
-const objLangs: IObjLangs[] = [];
-getLanguages().forEach((l) => {
-	const o: IObjLangs = { key: l, label: l.charAt(0).toUpperCase() + l.slice(1) };
-	objLangs.push(o);
-});
+// interface IObjLangs {
+// 	key: string;
+// 	label: string;
+// }
 
 export const quillDefaultConfig = {
 	theme: 'snow',
 	modules: {
-		syntax: {
-			hljs,
-			languages: objLangs,
-		},
+		// syntax: {
+		// 	languages: objLangs,
+		// },
 		toolbar: toolbarOptions,
 	},
 	placeholder: 'Писать здесь',
