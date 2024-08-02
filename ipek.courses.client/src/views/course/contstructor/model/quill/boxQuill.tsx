@@ -42,7 +42,6 @@ const BoxQuill = ({ content, quillConfig, useRetrunContent, style, isReadonly }:
 						console.error(e);
 					});
 			}
-
 			if (content !== undefined) {
 				quill.setContents(content);
 			}

@@ -10,27 +10,28 @@ import BoxQuill from '../model/quill/boxQuill';
 import { type IConstructorCode, ILanguage } from '../model/types';
 import { DragLine } from '../ui/dragLine/dragLine';
 
-const testCode = `const langs = langTool.getLangs;
-const defaultLang = langs.find((l) => l.id === 'plaintext') as ILanguage;
-const defaultEditorProps: EditorProps = {
-	loading: <Preloader />,
-	wrapperProps: { className: 'code' },
-	className: 'code-fields',
-	defaultLanguage: langs[0].aliases[0],
-};`;
+const testCode = `interface ILanguage{
+	id: string,
+	extensions: string,
+	aliases: string,
+	mimetypes: string,
+}`;
 
-const testLang = langTool.getLangs.find((l) => l.id === 'javascript') as ILanguage;
+const testLang = langTool.getLangs.find((l) => l.id === 'typescript') as ILanguage;
 const ConstructorCode = ({ isReadonly, theory }: IConstructorCode): React.JSX.Element => {
 	const boxConstructor = useRef<HTMLDivElement | null>(null);
 	const boxTheory = useRef<HTMLDivElement | null>(null);
 	const boxQuestions = useRef<HTMLDivElement | null>(null);
 	const boxQuestion = useRef<HTMLDivElement | null>(null);
 	const [maxHeightEditor, setMaxHeightEditor] = useState<number>(0);
-	useEffect(() => {
+	const calcMaxHeightEditor = (): void => {
 		if (boxQuestions.current !== null && boxQuestion.current !== null) {
 			const h = boxQuestions.current?.clientHeight - boxQuestion.current?.clientHeight - 16;
 			setMaxHeightEditor(h);
 		}
+	};
+	useEffect(() => {
+		calcMaxHeightEditor();
 	});
 	return (
 		<div className='constructor-code' ref={boxConstructor}>
@@ -54,7 +55,7 @@ const ConstructorCode = ({ isReadonly, theory }: IConstructorCode): React.JSX.El
 						</div>
 					</>
 				) : (
-					<CodeEditor code={testCode} maxHeight={maxHeightEditor + 'px'} language={testLang} />
+					<CodeEditor code={testCode} maxHeight={70 + '%'} language={testLang} />
 				)}
 			</div>
 		</div>

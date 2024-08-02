@@ -43,6 +43,7 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+            height: 30%;
 
             > div {
                 &:first-child {
@@ -59,13 +60,12 @@
                 font-weight: 400;
                 line-height: 18.75px;
                 text-align: left;
-                max-height: 128px;
+                height: 100%;
                 min-height: 32px;
-                width: -webkit-fill-available;
                 padding: 16px;
                 background: rgba(77, 80, 97, 0.08);
                 border-radius: 8px;
-                resize: vertical;
+                resize: none;
             }
 
             > .constructor-code__compiler {
@@ -80,7 +80,7 @@
                     line-height: 18.75px;
                     text-align: left;
                     max-height: 128px;
-                    width: -webkit-fill-available;
+                    width: 100%;
                     padding: 16px;
                     background: rgba(77, 80, 97, 0.08);
                     border-radius: 8px;
