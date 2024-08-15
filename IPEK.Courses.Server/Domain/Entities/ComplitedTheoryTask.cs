@@ -1,6 +1,6 @@
-﻿namespace IPEK.Courses.Server.Domain.Entities
+﻿using IPEK.Courses.Server.Domain.Entities.BaseEntities;
+
+namespace IPEK.Courses.Server.Domain.Entities
 {
-    public class ComplitedTheoryTask : BaseComplitedTask<TheoryTask>
-    {
-    }
+    public class ComplitedTheoryTask : BaseComplitedTask<TheoryTask> { }
 }

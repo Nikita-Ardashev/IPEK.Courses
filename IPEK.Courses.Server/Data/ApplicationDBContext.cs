@@ -23,43 +23,68 @@ namespace IPEK.Courses.Server.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.HasDefaultSchema("ipek-course");
 
-            #region ApplicationUser
+            ConfigureUser(modelBuilder);
+            ConfigureCourseTopic(modelBuilder);
+            ConfigureUserCourse(modelBuilder);
+            ConfigureTasks(modelBuilder);
+        }
 
-            modelBuilder.Entity<ApplicationUser>()
-                .HasOne(a => a.StudentGroup)
-                .WithMany(a => a.Students)
-                .HasForeignKey(a => a.StudentGroup);
+        private static void ConfigureTasks(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<TestTaskQuestion>()
+                .HasOne(tqm => tqm.Question)
+                .WithMany(tq => tq.TestTaskQuestions)
+                .HasForeignKey(tqm => tqm.TestQuestionId);
 
-            modelBuilder.Entity<ApplicationUser>()
-                .HasMany(a => a.UserCourses)
-                .WithOne(u => u.ApplicationUser)
-                .HasForeignKey(c => c.CourseId);
+            modelBuilder.Entity<TestTaskQuestion>()
+                .HasOne(tqm => tqm.Task)
+                .WithMany(tt => tt.TestTaskQuestions)
+                .HasForeignKey(tqm => tqm.TestTaskId);
 
-            modelBuilder.Entity<ApplicationUser>()
-                .HasMany(a => a.ComplitedTheoryTask)
-                .WithOne(u => u.ApplicationUser)
-                .HasForeignKey(c => c.TaskId);
+            modelBuilder.Entity<TestAnswer>()
+                .HasOne(ta => ta.TestQuestion)
+                .WithMany(tq => tq.TestAnswers)
+                .HasForeignKey(ta => ta.QuestionId);
 
-            modelBuilder.Entity<ApplicationUser>()
-                .HasMany(a => a.ComplitedCodeTasks)
-                .WithOne(u => u.ApplicationUser)
-                .HasForeignKey(c => c.TaskId);
+            modelBuilder.Entity<ComplitedTestTask>()
+                .HasOne(ctt => ctt.Task)
+                .WithMany(tt => tt.ComplitedTestTasks)
+                .HasForeignKey(ctt => ctt.TaskId);
 
-            modelBuilder.Entity<ApplicationUser>()
-                .HasMany(a => a.ComplitedTestTasks)
-                .WithOne(u => u.ApplicationUser)
-                .HasForeignKey(c => c.TaskId);
+            modelBuilder.Entity<ComplitedTestQuestion>()
+                .HasOne(ctt => ctt.Task)
+                .WithMany(tq => tq.ComplitedTestQuestions)
+                .HasForeignKey(ta => ta.TaskId);
 
-            modelBuilder.Entity<ApplicationUser>()
-                .HasMany(a => a.ComplitedTestQuestions)
-                .WithOne(u => u.ApplicationUser)
-                .HasForeignKey(c => c.TaskId);
+            modelBuilder.Entity<ComplitedCodeTask>()
+                .HasOne(cct => cct.Task)
+                .WithMany(ct => ct.ComplitedCodeTasks)
+                .HasForeignKey(cct => cct.TaskId);
 
-            #endregion
+            modelBuilder.Entity<ComplitedTheoryTask>()
+                .HasOne(ctt => ctt.Task)
+                .WithMany(tt => tt.ComplitedTheoryTasks)
+                .HasForeignKey(ta => ta.TaskId);
+        }
 
-            #region CourseTopic
+        private static void ConfigureUserCourse(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<UserCourse>()
+                .HasOne(uc => uc.ApplicationUser)
+                .WithMany(au => au.UserCourses)
+                .HasForeignKey(uc => uc.UserId);
+
+            modelBuilder.Entity<UserCourse>()
+                .HasOne(uc => uc.Course)
+                .WithMany(c => c.UserCourses)
+                .HasForeignKey(uc => uc.CourseId);
+        }
+
+        private static void ConfigureCourseTopic(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<CourseTopic>()
                 .HasOne(c => c.Course)
                 .WithMany(c => c.CourseTopics)
@@ -79,14 +104,34 @@ namespace IPEK.Courses.Server.Data
                 .HasMany(t => t.Tests)
                 .WithOne(c => c.CourseTopic)
                 .HasForeignKey(c => c.CourseTopicId);
-            #endregion
+        }
 
-            modelBuilder.Entity<ComplitedTheoryTask>()
-                .HasOne(t => t.Task)
-                .WithMany(t => t.ComplitedTheoryTasks)
-                .HasForeignKey(c => c.TaskId);
+        private static void ConfigureUser(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ApplicationUser>()
+                .HasOne(a => a.StudentGroup)
+                .WithMany(a => a.Students)
+                .HasForeignKey(a => a.GroupId);
 
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(a => a.ComplitedTheoryTask)
+                .WithOne(u => u.ApplicationUser)
+                .HasForeignKey(c => c.UserId);
+
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(a => a.ComplitedCodeTasks)
+                .WithOne(u => u.ApplicationUser)
+                .HasForeignKey(c => c.UserId);
+
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(a => a.ComplitedTestTasks)
+                .WithOne(u => u.ApplicationUser)
+                .HasForeignKey(c => c.UserId);
+
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(a => a.ComplitedTestQuestions)
+                .WithOne(u => u.ApplicationUser)
+                .HasForeignKey(c => c.UserId);
         }
 
         public virtual DbSet<StudentGroup> StudentGroups { get; set; }
@@ -97,13 +142,11 @@ namespace IPEK.Courses.Server.Data
         public virtual DbSet<ComplitedTheoryTask> ComplitedTheoryTasks { get; set; }
         public virtual DbSet<CodeTask> CodeTasks { get; set; }
         public virtual DbSet<ComplitedCodeTask> TheoryTaskCodeTasks { get; set; }
-        #region TestTasks
         public virtual DbSet<TestTask> TestTasks { get; set; }
         public virtual DbSet<TestQuestion> TestQuestions { get; set; }
         public virtual DbSet<TestAnswer> TestAnswers { get; set; }
-        public virtual DbSet<TestQuestionMaping> TestQuestionMapings { get; set; }
+        public virtual DbSet<TestTaskQuestion> TestQuestionMapings { get; set; }
         public virtual DbSet<ComplitedTestQuestion> ComplitedTestQuestions { get; set; }
         public virtual DbSet<ComplitedTestTask> ComplitedTestTasks { get; set; }
-        #endregion
     }
 }

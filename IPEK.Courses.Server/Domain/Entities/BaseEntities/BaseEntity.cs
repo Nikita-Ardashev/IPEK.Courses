@@ -1,4 +1,4 @@
-﻿namespace IPEK.Courses.Server.Domain.Entities
+﻿namespace IPEK.Courses.Server.Domain.Entities.BaseEntities
 {
     public class BaseEntity
     {
