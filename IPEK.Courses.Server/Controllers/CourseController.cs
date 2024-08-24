@@ -1,5 +1,4 @@
 ﻿using IPEK.Courses.Server.Domain.Entities;
-using IPEK.Courses.Server.Extensions;
 using IPEK.Courses.Server.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,12 +1,11 @@
 ﻿using IPEK.Courses.Server.Domain.Entities;
 using IPEK.Courses.Server.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace IPEK.Courses.Server.Controllers
 {
-    public class CodeTaskController : SimpleCrudController<CodeTask>
+    [Route("api/[controller]")]
+    public class CodeTaskController(IRepository<CodeTask> repository) : SimpleCrudController<CodeTask>(repository)
     {
-        public CodeTaskController(IRepository<CodeTask> repository) : base(repository)
-        {
-        }
     }
 }
