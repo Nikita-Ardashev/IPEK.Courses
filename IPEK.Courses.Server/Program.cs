@@ -1,5 +1,6 @@
 using IPEK.Courses.Server.Data;
 using IPEK.Courses.Server.Domain.Entities;
+using IPEK.Courses.Server.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 builder.Services.AddLogging();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddScoped<DBInitializer>();
+builder.Services.AddScoped<UserManagerExtended>();
 
 var app = builder.Build();
 app.UseDefaultFiles();
@@ -23,11 +25,12 @@ app.UseStaticFiles();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
     app.UseDeveloperExceptionPage();
     app.UseMigrationsEndPoint();
 }
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 using (var scope = app.Services.CreateScope())
 {

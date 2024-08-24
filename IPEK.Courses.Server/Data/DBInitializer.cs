@@ -1,4 +1,5 @@
-﻿using IPEK.Courses.Server.Domain.Entities;
+﻿using IPEK.Courses.Server.Domain.Constants;
+using IPEK.Courses.Server.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,10 +16,6 @@ namespace IPEK.Courses.Server.Data
         private const string TeacherEmail = "teacher@example.com";
         private const string Student1Email = "student1@example.com";
         private const string Student2Email = "student2@example.com";
-
-        private const string AdminRoleName = "Admin";
-        private const string TeacherRoleName = "Teacher";
-        private const string StudentRoleName = "Student";
 
         public DBInitializer(
             ApplicationDBContext context,
@@ -58,7 +55,7 @@ namespace IPEK.Courses.Server.Data
                 GroupId = null // или GUID для группы
             };
             await _userManager.CreateAsync(adminUser, "Admin@123");
-            await _userManager.AddToRoleAsync(adminUser, AdminRoleName);
+            await _userManager.AddToRoleAsync(adminUser, RoleNames.AdminRoleName);
 
             var teacherUser = new ApplicationUser
             {
@@ -68,7 +65,7 @@ namespace IPEK.Courses.Server.Data
                 GroupId = null 
             };
             await _userManager.CreateAsync(teacherUser, "Teacher@123");
-            await _userManager.AddToRoleAsync(teacherUser, TeacherRoleName);
+            await _userManager.AddToRoleAsync(teacherUser, RoleNames.TeacherRoleName);
 
             var studentUser1 = new ApplicationUser
             {
@@ -78,22 +75,22 @@ namespace IPEK.Courses.Server.Data
                 GroupId = _context.StudentGroups.First().Id
             };
             await _userManager.CreateAsync(studentUser1, "Student@123");
-            await _userManager.AddToRoleAsync(studentUser1, StudentRoleName);
+            await _userManager.AddToRoleAsync(studentUser1, RoleNames.StudentRoleName);
 
             var studentUser2 = new ApplicationUser
             {
                 UserName = Student2Email,
                 Email = Student2Email,
                 EmailConfirmed = true,
-                GroupId = _context.StudentGroups.Last().Id
+                GroupId = _context.StudentGroups.LastOrDefault()?.Id
             };
             await _userManager.CreateAsync(studentUser2, "Student@123");
-            await _userManager.AddToRoleAsync(studentUser2, StudentRoleName);
+            await _userManager.AddToRoleAsync(studentUser2, RoleNames.StudentRoleName);
         }
 
         private async Task CreateRoles()
         {
-            var roles = new[] { AdminRoleName, TeacherRoleName, StudentRoleName };
+            var roles = new[] { RoleNames.AdminRoleName, RoleNames.TeacherRoleName, RoleNames.StudentRoleName };
             foreach (var role in roles)
             {
                 if (!await _roleManager.RoleExistsAsync(role))
