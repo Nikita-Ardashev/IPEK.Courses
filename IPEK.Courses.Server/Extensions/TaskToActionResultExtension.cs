@@ -17,7 +17,7 @@ namespace IPEK.Courses.Server.Extensions
 			}
         }
 
-        public static async Task<IActionResult> ToActionResult<TResult>(this Task<TResult> task)
+        public static async Task<ActionResult<TResult>> ToActionResult<TResult>(this Task<TResult> task)
         {
             try
             {

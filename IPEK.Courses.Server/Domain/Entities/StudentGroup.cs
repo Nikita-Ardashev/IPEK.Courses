@@ -1,9 +1,9 @@
-﻿namespace IPEK.Courses.Server.Domain.Entities
+﻿using IPEK.Courses.Server.Domain.Entities.BaseEntities;
+
+namespace IPEK.Courses.Server.Domain.Entities
 {
-    public class StudentGroup
+    public class StudentGroup : BaseEntity
     {
-        public Guid Id { get; set; }
-        public required string GroupName { get; set; }
         public virtual ICollection<ApplicationUser> Students { get; set; }
     }
 }

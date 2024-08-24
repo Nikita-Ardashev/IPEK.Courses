@@ -1,6 +1,9 @@
 using IPEK.Courses.Server.Data;
 using IPEK.Courses.Server.Domain.Entities;
+using IPEK.Courses.Server.Domain.Entities.BaseEntities;
+using IPEK.Courses.Server.Interfaces;
 using IPEK.Courses.Server.Services;
+using IPEK.Courses.Server.Services.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +21,7 @@ builder.Services.AddLogging();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddScoped<DBInitializer>();
 builder.Services.AddScoped<UserManagerExtended>();
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 var app = builder.Build();
 app.UseDefaultFiles();
@@ -37,7 +41,8 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
 
     var context = services.GetRequiredService<ApplicationDBContext>();
-    await context.Database.EnsureCreatedAsync();
+    //await context.Database.EnsureCreatedAsync();
+    await context.Database.MigrateAsync();
 
     var dbInitializer = services.GetRequiredService<DBInitializer>();
     await dbInitializer.InitialCreate();

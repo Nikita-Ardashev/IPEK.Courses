@@ -21,7 +21,7 @@ namespace IPEK.Courses.Server.Controllers
 
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateUser([FromBody] CreateUserDto createUserDto) => await _userManager.CreateUser(createUserDto).ToActionResult();
+        public async Task<ActionResult<string>> CreateUser([FromBody] CreateUserDto createUserDto) => await _userManager.CreateUser(createUserDto).ToActionResult();
         
         [HttpPut("email")]
         public async Task<IActionResult> ChangeUserEmail(string id, string newEmail) => await _userManager.ChangeUserEmail(id, newEmail).ToActionResult();
@@ -33,9 +33,9 @@ namespace IPEK.Courses.Server.Controllers
         public async Task<IActionResult> DeleteUser(string id) => await _userManager.DeleteUser(id).ToActionResult();
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUserById(string id) => await _userManager.GetUserById(id).ToActionResult();
+        public async Task<ActionResult<UserDto>> GetUserById(string id) => await _userManager.GetUserById(id).ToActionResult();
 
         [HttpGet]
-        public async Task<IActionResult> GetAllUsers() => await _userManager.GetAllUsers().ToActionResult();
+        public async Task<ActionResult<UserDto[]>> GetAllUsers() => await _userManager.GetAllUsers().ToActionResult();
     }
 }

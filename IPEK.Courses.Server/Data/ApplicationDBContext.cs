@@ -10,7 +10,7 @@ namespace IPEK.Courses.Server.Data
             : base(dbContextOptions)
         {
 #if DEBUG
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
 #endif
         }
 

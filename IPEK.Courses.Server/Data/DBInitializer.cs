@@ -104,8 +104,8 @@ namespace IPEK.Courses.Server.Data
         {
             if (await _context.StudentGroups.AnyAsync()) return;
             
-            var group1 = new StudentGroup { Id = Guid.NewGuid(), GroupName = "Group A" };
-            var group2 = new StudentGroup { Id = Guid.NewGuid(), GroupName = "Group B" };
+            var group1 = new StudentGroup { Id = Guid.NewGuid(), Name = "Group A" };
+            var group2 = new StudentGroup { Id = Guid.NewGuid(), Name = "Group B" };
             _context.StudentGroups.AddRange(group1, group2);
             await _context.SaveChangesAsync();
         }
