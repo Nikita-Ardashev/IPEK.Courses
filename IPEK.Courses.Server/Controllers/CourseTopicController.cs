@@ -1,12 +1,12 @@
-﻿using IPEK.Courses.Server.Domain.Entities;
+﻿using IPEK.Courses.Server.Controllers.Base;
+using IPEK.Courses.Server.Domain.Entities;
 using IPEK.Courses.Server.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IPEK.Courses.Server.Controllers
 {
     [Route("api/[controller]")]
-    public class CourseTopicController : SimpleCrudController<CourseTopic>
+    public class CourseTopicController(IRepository<CourseTopic> repository) : BaseCrudController<CourseTopic>(repository)
     {
-        public CourseTopicController(IRepository<CourseTopic> repository) : base (repository) { }
     }
 }

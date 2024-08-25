@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace IPEK.Courses.Server.Controllers
 {
     [Route("api/[controller]")]
-    public class TestTaskController(IRepository<TestTask> repository) : BaseCrudController<TestTask>(repository)
+    public class ComplitedTheoryTaskController(IRepository<ComplitedTheoryTask> repository) : BaseCrudController<ComplitedTheoryTask>(repository)
     {
     }
 }

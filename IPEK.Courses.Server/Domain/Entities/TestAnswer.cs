@@ -1,8 +1,9 @@
-﻿namespace IPEK.Courses.Server.Domain.Entities
+﻿using IPEK.Courses.Server.Domain.Entities.BaseEntities;
+
+namespace IPEK.Courses.Server.Domain.Entities
 {
-    public class TestAnswer
+    public class TestAnswer : BaseEntity
     {
-        public Guid Id { get; set; }
         public string Answer{ get; set; }
         public bool IsCorrectAnswer{ get; set; }
         public Guid QuestionId { get; set; }

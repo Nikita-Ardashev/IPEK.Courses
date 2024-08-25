@@ -35,6 +35,7 @@ namespace IPEK.Courses.Server.Data
         private static void ConfigureTasks(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TestTaskQuestion>()
+                .IgnoreNameAndDescription()
                 .HasOne(tqm => tqm.Question)
                 .WithMany(tq => tq.TestTaskQuestions)
                 .HasForeignKey(tqm => tqm.TestQuestionId);
@@ -45,26 +46,31 @@ namespace IPEK.Courses.Server.Data
                 .HasForeignKey(tqm => tqm.TestTaskId);
 
             modelBuilder.Entity<TestAnswer>()
+                .IgnoreNameAndDescription()
                 .HasOne(ta => ta.TestQuestion)
                 .WithMany(tq => tq.TestAnswers)
                 .HasForeignKey(ta => ta.QuestionId);
 
             modelBuilder.Entity<ComplitedTestTask>()
+                .IgnoreNameAndDescription()
                 .HasOne(ctt => ctt.Task)
                 .WithMany(tt => tt.ComplitedTestTasks)
                 .HasForeignKey(ctt => ctt.TaskId);
 
             modelBuilder.Entity<ComplitedTestQuestion>()
+                .IgnoreNameAndDescription()
                 .HasOne(ctt => ctt.Task)
                 .WithMany(tq => tq.ComplitedTestQuestions)
                 .HasForeignKey(ta => ta.TaskId);
 
             modelBuilder.Entity<ComplitedCodeTask>()
+                .IgnoreNameAndDescription()
                 .HasOne(cct => cct.Task)
                 .WithMany(ct => ct.ComplitedCodeTasks)
                 .HasForeignKey(cct => cct.TaskId);
 
             modelBuilder.Entity<ComplitedTheoryTask>()
+                .IgnoreNameAndDescription()
                 .HasOne(ctt => ctt.Task)
                 .WithMany(tt => tt.ComplitedTheoryTasks)
                 .HasForeignKey(ta => ta.TaskId);
@@ -73,6 +79,7 @@ namespace IPEK.Courses.Server.Data
         private static void ConfigureUserCourse(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserCourse>()
+                .IgnoreNameAndDescription()
                 .HasOne(uc => uc.ApplicationUser)
                 .WithMany(au => au.UserCourses)
                 .HasForeignKey(uc => uc.UserId);

@@ -1,8 +1,7 @@
 ﻿namespace IPEK.Courses.Server.Domain.Entities.BaseEntities
 {
-    public class BaseComplitedTask<T>
+    public class BaseComplitedTask<T> : BaseEntity
     {
-        public Guid Id { get; set; }
         public bool ComplitedOnTimeEnd { get; set; }
         public bool Answered { get; set; }
         public bool AnsweredCorrectly { get; set; }
