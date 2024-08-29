@@ -1,4 +1,4 @@
-import './largeButton.styl';
+import './largeButton.sass';
 
 import iconPencil from '@img/account/pencil.svg';
 import React, { type HtmlHTMLAttributes } from 'react';

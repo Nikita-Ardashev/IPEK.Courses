@@ -1,4 +1,4 @@
-import './filter.styl';
+import './filter.sass';
 
 import iconCheck from '@img/constructor/check.svg';
 import React from 'react';

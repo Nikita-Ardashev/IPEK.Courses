@@ -1,4 +1,4 @@
-import './dragLine.styl';
+import './dragLine.sass';
 
 import iconDragline from '@img/constructor/drag.svg';
 import React, { type ReactNode, type RefObject, useEffect, useRef } from 'react';

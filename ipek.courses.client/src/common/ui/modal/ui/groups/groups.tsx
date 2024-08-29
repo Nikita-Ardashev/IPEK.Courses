@@ -1,4 +1,4 @@
-import './groups.styl';
+import './groups.sass';
 
 import iconDelete from '@img/admin/delete.svg';
 // import iconPencil from '@img/admin/pencil.svg';

@@ -1,4 +1,4 @@
-import './warning.styl';
+import './warning.sass';
 
 import React from 'react';
 interface IModalWarning {

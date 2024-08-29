@@ -1,4 +1,4 @@
-import './listItem.styl';
+import './listItem.sass';
 
 import iconDelete from '@img/admin/delete.svg';
 import iconEdit from '@img/admin/pencil.svg';

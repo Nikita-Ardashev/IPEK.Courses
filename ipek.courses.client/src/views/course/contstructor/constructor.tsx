@@ -1,4 +1,4 @@
-import './constructor.styl';
+import './constructor.sass';
 
 import React, { useContext, useState } from 'react';
 

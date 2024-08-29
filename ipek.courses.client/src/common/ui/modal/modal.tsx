@@ -1,4 +1,4 @@
-import './modal.styl';
+import './modal.sass';
 
 import iconClose from '@img/account/close.svg';
 import React, { useMemo } from 'react';

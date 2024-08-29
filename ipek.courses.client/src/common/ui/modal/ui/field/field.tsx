@@ -1,4 +1,4 @@
-import './field.styl';
+import './field.sass';
 
 import React, { useRef, useState } from 'react';
 interface IModalField {

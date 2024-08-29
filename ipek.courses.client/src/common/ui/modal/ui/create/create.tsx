@@ -1,4 +1,4 @@
-import './create.styl';
+import './create.sass';
 
 import React, { useMemo, useState } from 'react';
 

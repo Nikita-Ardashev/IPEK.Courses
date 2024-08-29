@@ -1,7 +1,6 @@
 import { fileURLToPath, URL } from 'node:url';
 
 import plugin from '@vitejs/plugin-react';
-import autoprefixer from 'autoprefixer';
 import child_process from 'child_process';
 import fs from 'fs';
 import path from 'path';
@@ -10,7 +9,9 @@ import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 const baseFolder =
-	env.APPDATA !== undefined && env.APPDATA !== '' ? `${env.APPDATA}/ASP.NET/https` : `${env.HOME}/.aspnet/https`;
+	env.APPDATA !== undefined && env.APPDATA !== ''
+		? `${env.APPDATA}/ASP.NET/https`
+		: `${env.HOME}/.aspnet/https`;
 
 const certificateName = 'ipek.courses.client';
 const certFilePath = path.join(baseFolder, `${certificateName}.pem`);
@@ -21,7 +22,15 @@ if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
 		0 !==
 		child_process.spawnSync(
 			'dotnet',
-			['dev-certs', 'https', '--export-path', certFilePath, '--format', 'Pem', '--no-password'],
+			[
+				'dev-certs',
+				'https',
+				'--export-path',
+				certFilePath,
+				'--format',
+				'Pem',
+				'--no-password',
+			],
 			{ stdio: 'inherit' },
 		).status
 	) {
@@ -37,17 +46,6 @@ const target = env.ASPNETCORE_HTTPS_PORT
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	css: {
-		preprocessorOptions: {
-			stylus: {
-				use: [],
-				import: [],
-			},
-		},
-		postcss: {
-			plugins: [autoprefixer({})],
-		},
-	},
 	plugins: [plugin(), tsconfigPaths()],
 	resolve: {
 		alias: {

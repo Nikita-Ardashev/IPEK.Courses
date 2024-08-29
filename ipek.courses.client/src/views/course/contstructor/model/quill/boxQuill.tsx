@@ -1,4 +1,4 @@
-import './quill.styl';
+import './quill.sass';
 
 import Quill from 'quill';
 import { type Delta, type QuillOptions } from 'quill/core';

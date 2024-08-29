@@ -1,4 +1,4 @@
-import './notify.styl';
+import './notify.sass';
 
 import colseIcon from '@img/account/close.svg';
 import alertIcon from '@img/notify/alert.svg';

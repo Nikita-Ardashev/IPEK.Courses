@@ -1,0 +1,91 @@
+@import ../../../../../variables
+
+#editor, .ql-toolbar
+    border: none !important
+
+.ql-snow .ql-editor .ql-code-block-container
+    background-color: rgba(77, 80, 97, 0.08) !important
+
+.ql-video
+    width: 100%
+    aspect-ratio: 16 / 9
+
+.ql-editor img
+    width: 100%
+
+.ql-toolbar
+    z-index: 10
+
+    .ql-syntax
+        background: rgba(77, 80, 97, 0.08) !important
+        color: black !important
+
+    span.ql-color, span.ql-background, button.ql-bold, button.ql-italic, button.ql-underline, button.ql-strike, button.ql-clean, button.ql-blockquote, button.ql-code-block, button.ql-script, button.ql-list, button.ql-indent, span.ql-align, button.ql-header, button.ql-image, button.ql-video
+        position: relative !important
+
+    span.ql-color::after, span.ql-background::after, button.ql-bold::after, button.ql-italic::after, button.ql-underline::after, button.ql-strike::after, button.ql-clean::after, button.ql-blockquote::after, button.ql-code-block::after, button.ql-script::after, button.ql-list::after, button.ql-indent::after, span.ql-align::after, button.ql-header::after, button.ql-image::after, button.ql-video::after
+        position: absolute
+        bottom: 100%
+        display: none
+        border-radius: 4px
+        background: black
+        padding: 12px 16px
+        font-family: $Roboto
+        font-size: 16px
+        font-weight: 400
+        color: white
+        z-index: 10
+        text-align: center
+        min-width: 128px
+        pointer-events: none
+
+    span.ql-color:hover::after, span.ql-background:hover::after, button.ql-bold:hover::after, button.ql-italic:hover::after, button.ql-underline:hover::after, button.ql-strike:hover::after, button.ql-clean:hover::after, button.ql-blockquote:hover::after, button.ql-code-block:hover::after, button.ql-script:hover::after, button.ql-list:hover::after, button.ql-indent:hover::after, span.ql-align:hover::after, button.ql-header:hover::after, button.ql-image:hover::after, button.ql-video:hover::after
+        display: block
+
+    span.ql-color::after
+        content: 'Палитра'
+
+    span.ql-background::after
+        content: 'Палитра заднего фона'
+
+    button.ql-bold::after
+        content: 'Жирный шрифт'
+
+    button.ql-italic::after
+        content: 'Курсив'
+
+    button.ql-underline::after
+        content: 'Подчеркивание'
+
+    button.ql-strike::after
+        content: 'Вычеркнуть'
+
+    button.ql-clean::after
+        content: 'Убрать форматирование'
+
+    button.ql-blockquote::after
+        content: 'Цитирование'
+
+    button.ql-code-block::after
+        content: 'Код'
+
+    button.ql-script::after
+        content: 'Строчный колонтитул'
+
+    button.ql-list::after
+        content: 'Список'
+
+    button.ql-indent::after
+        content: 'Отступы'
+
+    span.ql-align::after
+        content: 'Позиционирование'
+
+    button.ql-header::after
+        content: 'Заголовок'
+
+    button.ql-image::after
+        content: 'Добавить изображение'
+
+    button.ql-video::after
+        content: 'Добавить видео'

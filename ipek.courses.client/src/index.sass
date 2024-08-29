@@ -1,0 +1,45 @@
+@import './variables'
+
+*
+	padding: 0
+	margin: 0
+	border: none
+	outline: none
+	color: $black-color
+
+*:not(u, s)
+	text-decoration: none
+
+a, button, input[type='button'], input[type='submit'], label
+	cursor: pointer
+
+html
+	height: 100%
+	scroll-behavior: smooth
+	scrollbar-gutter: stable
+
+::-webkit-scrollbar
+	width: 8px
+	height: 8px
+	background: rgba(0, 0, 0, 0.1)
+
+::-webkit-scrollbar-track
+	// background: rgba(0, 0, 0, 0.1)
+
+::-webkit-scrollbar-thumb
+	background-color: rgba(0, 0, 0, 0.1)
+	border-radius: 4px
+	border: 2px solid rgba(0, 0, 0, 0)
+
+::-webkit-scrollbar-thumb:hover
+	background-color: rgba(0, 0, 0, 0.4)
+
+#root
+	display: flex
+	flex-direction: column
+	overflow-x: hidden
+	height: 100%
+	padding: 0 5%
+
+body
+	height: 100%

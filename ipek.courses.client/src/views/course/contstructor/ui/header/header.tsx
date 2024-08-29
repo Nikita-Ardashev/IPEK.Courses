@@ -1,4 +1,4 @@
-import './header.styl';
+import './header.sass';
 
 import iconArrow from '@img/constructor/arrow.svg';
 import React, { useContext, useEffect, useState } from 'react';

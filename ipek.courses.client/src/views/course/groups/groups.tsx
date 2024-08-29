@@ -1,4 +1,4 @@
-import './groups.styl';
+import './groups.sass';
 
 import iconArrow from '@img/constructor/arrow.svg';
 import iconClearFilter from '@img/constructor/clearFilter.svg';

@@ -1,4 +1,4 @@
-import './header.styl';
+import './header.sass';
 
 import iconAccount from '@img/Account.svg';
 import iconAccountMultiplePlus from '@img/admin/account-multiple-plus.svg';
@@ -21,8 +21,18 @@ const Header = (): React.JSX.Element => {
 	const name = '';
 	const [isViewModal, setIsViewModal] = useState<boolean>(false);
 	const [modal, setModal] = useState<React.ReactNode | null>();
-	const viewModal = (typeModalBox: IModalType, typeModal: IModalEditType, onCreate: () => void): void => {
-		setModal(<Modal type={typeModalBox} data={{ type: typeModal, onCreate }} setView={setIsViewModal} />);
+	const viewModal = (
+		typeModalBox: IModalType,
+		typeModal: IModalEditType,
+		onCreate: () => void,
+	): void => {
+		setModal(
+			<Modal
+				type={typeModalBox}
+				data={{ type: typeModal, onCreate }}
+				setView={setIsViewModal}
+			/>,
+		);
 		setIsViewModal(true);
 	};
 	const post = (): void => {};

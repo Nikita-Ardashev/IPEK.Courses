@@ -1,4 +1,4 @@
-import './test.styl';
+import './test.sass';
 
 import iconDelete from '@img/constructor/delete.svg';
 import iconMultiAnswer from '@img/constructor/multi-answer.svg';

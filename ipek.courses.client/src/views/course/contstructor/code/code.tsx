@@ -1,4 +1,4 @@
-import './code.styl';
+import './code.sass';
 
 import React, { useEffect, useRef, useState } from 'react';
 

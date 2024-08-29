@@ -1,4 +1,4 @@
-import './preloader.styl';
+import './preloader.sass';
 
 import React from 'react';
 

@@ -1,4 +1,4 @@
-import './task.styl';
+import './task.sass';
 
 import React, { useMemo, useState } from 'react';
 

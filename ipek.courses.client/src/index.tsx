@@ -1,4 +1,4 @@
-import './index.styl';
+import './index.sass';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -29,7 +29,10 @@ if (root == null) {
 				{ path: 'course/edit', element: <CourseEdit /> },
 				{ path: 'course/groups', element: <CourseGroups /> },
 				{ path: 'course/constructor/test', element: <Constructor type='test' /> },
-				{ path: 'course/constructor/theory', element: <Constructor type='theory' /> },
+				{
+					path: 'course/constructor/theory',
+					element: <Constructor type='theory' />,
+				},
 				{ path: 'course/constructor/code', element: <Constructor type='code' /> },
 			],
 		},

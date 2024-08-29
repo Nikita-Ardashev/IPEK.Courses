@@ -1,0 +1,91 @@
+@import ../../../variables
+@mixin text()
+    font-family: $Ubuntu
+    font-size: 20px
+    font-weight: 400
+    line-height: 25px
+    text-align: left
+    color: rgba(0, 0, 0, 1)
+    cursor: pointer
+    background: transparent
+
+@mixin viewDrop($isView: true)
+    @if $isView
+        opacity: 1
+        height: auto
+        pointer-events: auto
+    @else
+        opacity: 0
+        height: 0
+        pointer-events: none
+
+.dropdown
+    position: relative
+    display: flex
+    flex-direction: column
+
+    button
+        display: flex
+        flex-direction: row
+        align-items: center
+        gap: 16px
+        justify-content: space-between
+        width: 100%
+        padding: 0 4px
+        cursor: pointer
+        background: transparent
+
+        img
+            width: 12px
+            height: 18px
+
+        p
+            @include text()
+
+        &:focus ~ div
+            @include viewDrop()
+
+    > div
+        position: absolute
+        left: 0
+        top: calc(100% + 4px)
+        z-index: 1
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        background: $white-color
+        max-height: 192px
+        min-width: 324px
+        width: 100%
+        z-index: 6
+        overflow-y: auto
+        @include viewDrop(false)
+        scrollbar-gutter: stable
+        border-radius: 0 0 8px 8px
+
+        &:active, &:focus-within
+            @include viewDrop()
+
+        span
+            @include text()
+            padding: 4px
+
+            &:hover
+                background: rgba(0, 0, 0, 0.1)
+        label
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+            padding: 4px
+            cursor: text
+            position: sticky
+            top: 0
+            background: $white-color
+            img
+                width: 16px
+                height: 16px
+            input
+                cursor: text !important
+                @include text()
+                max-width: 92px

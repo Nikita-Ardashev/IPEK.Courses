@@ -1,4 +1,4 @@
-import './login.styl';
+import './login.sass';
 
 import React, { useState } from 'react';
 const Login = (): React.JSX.Element => {

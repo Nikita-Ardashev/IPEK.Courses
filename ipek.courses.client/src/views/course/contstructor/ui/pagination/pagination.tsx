@@ -1,4 +1,4 @@
-import './pagination.styl';
+import './pagination.sass';
 
 import iconArrow from '@img/constructor/arrow.svg';
 import React from 'react';

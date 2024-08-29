@@ -1,4 +1,4 @@
-import './course.styl';
+import './course.sass';
 
 import iconUpload from '@img/admin/upload.svg';
 import React, { type Dispatch, type SetStateAction, useState } from 'react';

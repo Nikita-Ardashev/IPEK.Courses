@@ -1,4 +1,4 @@
-import './home.styl';
+import './home.sass';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -8,7 +8,10 @@ const Home = (): React.JSX.Element => {
 			<h1>
 				Изучайте материалы разных профессий вместе с <span>ипэк.курсы</span>
 			</h1>
-			<h2>Бесплатная онлайн платформа для учащихся Ижевского промышленно- экономического колледжа</h2>
+			<h2>
+				Бесплатная онлайн платформа для учащихся Ижевского промышленно-
+				экономического колледжа
+			</h2>
 			<Link to={'/login'} className='home__login '>
 				Войти в аккаунт
 			</Link>

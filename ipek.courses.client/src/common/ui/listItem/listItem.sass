@@ -1,0 +1,39 @@
+@import '../../../variables'
+
+.list-item
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: left
+    width: 100%
+    @include stateBtn($white-color, true)
+    border-radius: 8px
+    padding: 0 16px
+
+    a
+        width: 100%
+
+    p
+        display: flex
+        flex-direction: row
+        padding: 20px 0
+        width: 100%
+        gap: 4px
+        font-family: $Roboto
+        font-size: 32px
+        font-weight: 400
+        line-height: 37.5px
+        text-align: left
+
+.list-item__edit
+    display: flex
+    flex-direction: row
+    align-items: center
+    gap: 24px
+
+    button
+        background: transparent
+
+        img
+            width: 24px
+            height: 24px

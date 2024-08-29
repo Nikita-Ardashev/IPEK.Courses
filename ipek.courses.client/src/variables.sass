@@ -1,0 +1,43 @@
+@use 'sass:color'
+
+$black-color: #000
+$gray-color: #4D5061
+$white-color: #FFFFFF
+$blue-color: #1E90FF
+$red-color: #DB515F
+$orange-color: #FBBA23
+$green-color: #67CC2F
+$transition: all 0.4s
+
+@font-face
+	font-family: 'Roboto'
+	src: url('./common/assets/fonts/Roboto.ttf')
+
+@font-face
+	font-family: 'Sans'
+	src: url('./common/assets/fonts/SrbijaSans.otf')
+
+@font-face
+	font-family: 'Ubuntu'
+	src: url('./common/assets/fonts/UbuntuMono-Regular.ttf')
+
+$Roboto: 'Roboto'
+$Sans: 'Sans'
+$Ubuntu: 'Ubuntu'
+
+@function stateChange($color, $alpha, $isBlack, $blackPercent)
+	@if $isBlack
+		@return color.change($color, $blackness: $blackPercent)
+	@else
+		@return color.change($color, $alpha: $alpha)
+
+@mixin stateBtn($color, $isBlack: false)
+	transition: $transition
+	&:hover
+		background: stateChange($color, $alpha: 0.88, $isBlack: $isBlack, $blackPercent: 6%)
+	&:active
+		background: stateChange($color, $alpha: 0.88, $isBlack: $isBlack, $blackPercent: 6%)
+	&:focus
+		background: stateChange($color, $alpha: 0.6, $isBlack: $isBlack, $blackPercent: 10%)
+	&:disabled
+		background: stateChange($color, $alpha: 0.24, $isBlack: $isBlack, $blackPercent: 24%)

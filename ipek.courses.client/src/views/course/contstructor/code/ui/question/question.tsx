@@ -1,4 +1,4 @@
-import './question.styl';
+import './question.sass';
 
 import React from 'react';
 const ConstructorQuestion = (): React.JSX.Element => {
