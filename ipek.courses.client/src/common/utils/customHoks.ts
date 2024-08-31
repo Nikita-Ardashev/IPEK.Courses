@@ -6,13 +6,19 @@ interface ICheckReponseData<T> {
 	loading: boolean;
 }
 
-export const useCheckReponse = <T>(promise: () => Promise<T>): ICheckReponseData<T> => {
+interface IUseCheckResponese<T> {
+	fetch: () => Promise<void>;
+	data: ICheckReponseData<T>;
+}
+
+export const useCheckReponse = <T>(promise: () => Promise<T>): IUseCheckResponese<T> => {
 	const [data, setData] = useState<ICheckReponseData<T>>({
 		result: null,
 		error: null,
 		loading: false,
 	});
-	useEffect(() => {
+
+	const fetch = async () => {
 		setData((v) => {
 			const newV = { ...v, loading: true };
 			return newV;
@@ -20,18 +26,18 @@ export const useCheckReponse = <T>(promise: () => Promise<T>): ICheckReponseData
 		try {
 			promise().then((r) => {
 				setData((v) => {
-					const newV = { ...v, loading: false, result: r };
+					const newV = { ...v, result: r, loading: false };
 					return newV;
 				});
 			});
 		} catch (e) {
 			setData((v) => {
-				const newV = { ...v, loading: false, error: e as Error };
+				const newV = { ...v, error: e as Error, loading: false };
 				return newV;
 			});
 			throw new Error(e);
 		}
-	}, [promise]);
+	};
 
-	return data;
+	return { fetch, data };
 };
