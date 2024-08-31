@@ -28,7 +28,11 @@ const Login = (): React.JSX.Element => {
 							setPassword(e.currentTarget.value);
 						}}
 					/>
-					{<p style={{ opacity: isError ? 1 : 0 }}>Неправильный логин или пароль</p>}
+					{
+						<p style={{ opacity: isError ? 1 : 0 }}>
+							Неправильный логин или пароль
+						</p>
+					}
 				</div>
 				<button type='button' className='login__submit'>
 					Войти

@@ -5,7 +5,7 @@ import { langModel } from '@/store/models/utils';
 
 export interface ILanguage extends Instance<typeof langModel> {}
 
-export type TConstructor = 'code' | 'theory' | 'test';
+export type TConstructor = 'code' | 'test';
 export interface IConstructorQuestions {
 	quest: string;
 	code: string;

@@ -5,10 +5,8 @@ import iconAccountMultiplePlus from '@img/admin/account-multiple-plus.svg';
 // import iconAccountPlus from '@img/admin/account-plus.svg';
 import iconCoursePlus from '@img/admin/course-plus.svg';
 import Logout from '@img/logout.svg';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-
-import { logout } from '@/common/api/api';
 
 import Modal from '../modal/modal';
 import { type IModalEditType, type IModalType } from '../modal/model/types';
@@ -83,13 +81,7 @@ const Header = (): React.JSX.Element => {
 							<HeaderNav
 								img={Logout}
 								text='Выйти из аккаунта'
-								onclick={() => {
-									void logout().finally(() => {
-										setIsLogin(false);
-										console.log(localStorage.getItem('token'));
-										navigate('/login');
-									});
-								}}
+								onclick={() => {}}
 							/>
 						</div>
 					</div>

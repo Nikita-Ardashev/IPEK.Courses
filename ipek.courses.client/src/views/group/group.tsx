@@ -1,11 +1,8 @@
 import './group.sass';
 
-import React, { useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import React from 'react';
 
-import { group, type IProfileDataUser } from '@/common/api/api';
 // import LargeButton from '@/common/ui/largeButton/largeButton';
-import ListItem from '@/common/ui/listItem/listItem';
 
 const Group = (): React.JSX.Element => {
 	return (

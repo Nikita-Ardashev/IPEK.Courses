@@ -1,4 +1,4 @@
-interface ICourseTheme {
+export interface ICourseTheme {
 	id: string;
 	isComplete: boolean;
 	isWithError: boolean;
@@ -6,49 +6,53 @@ interface ICourseTheme {
 	title: string;
 	timer: string;
 }
-interface ICourseCode extends ICourseTheme {
+export interface ICourseCode extends ICourseTheme {
 	theme: object;
 	task: string;
 	answer: string;
 }
 
-interface ICourseTestTask {
+export interface ICourseTestTask {
 	task: string;
 	answer: string[];
 }
-interface ICourseTest extends ICourseTheme {
+export interface ICourseTest extends ICourseTheme {
 	tasks: ICourseTestTask[];
 }
 
-interface ICourse {
+export interface ICourse {
 	id: string;
 	title: string;
+	category: string;
+	icon: string;
+	color: string;
 	themes: ICourseCode[] | ICourseTest[];
 	progress: number;
 	assignedGroups: IGroup[] | IStudent[];
 }
 
-interface IGroup {
+export interface IGroup {
 	id: string;
 	title: string;
 	students: IStudent[];
 }
 
-interface ILogin {
+export interface ILogin {
 	login: string;
 	password: string;
 }
 
-interface IStudent {
+export interface IStudent {
 	id: string;
 	firstName: string;
 	secondName: string;
 	thridName: string;
 	group: IGroup;
 	phone: number;
+	email: string;
 }
 
-interface IProfile extends ILogin, IStudent {
+export interface IProfile extends ILogin, IStudent {
 	isTeacher: boolean;
 	isAdmin: boolean;
 	createdCourses?: ICourse[];
@@ -56,3 +60,15 @@ interface IProfile extends ILogin, IStudent {
 	completedCourses?: ICourse[];
 	groups?: IGroup[];
 }
+
+const DEFAULT_HEADERS: HeadersInit = {
+	'Content-Type': 'application/json',
+};
+
+export const getUsers = async () => {
+	const res = await fetch('http://localhost:5035/api/Users', {
+		method: 'get',
+		headers: { ...DEFAULT_HEADERS },
+	});
+	return res.json();
+};

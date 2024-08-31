@@ -3,18 +3,21 @@ import './edit.sass';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { courseThemes, type ICourseThemes } from '@/common/api/api';
 import LargeButton from '@/common/ui/largeButton/largeButton';
 import ListItem from '@/common/ui/listItem/listItem';
 import Modal from '@/common/ui/modal/modal';
 
 const CourseEdit = (): React.JSX.Element => {
 	const [isViewAddThemeModal, setIsViewAddThemeModal] = useState<boolean>(false);
-	const [dataCourse, setDataCourse] = useState<ICourseThemes | null>(null);
+	const [dataCourse, setDataCourse] = useState<any | null>(null);
 	return (
 		<div className='edit'>
 			{isViewAddThemeModal && (
-				<Modal type='task' setView={setIsViewAddThemeModal} data={{ type: 'practice', onCreate: () => {} }} />
+				<Modal
+					type='task'
+					setView={setIsViewAddThemeModal}
+					data={{ type: 'practice', onCreate: () => {} }}
+				/>
 			)}
 			<div className='edit__heading'>
 				<div>

@@ -1,11 +1,10 @@
 import './constructor.sass';
 
-import React, { useContext, useState } from 'react';
+import React from 'react';
 
 import ConstructorCode from './code/code';
 import { type IConstructor } from './model/types';
 import ConstructorTest from './test/test';
-import ConstructorTheory from './theory/theory';
 import ConstructorHeader from './ui/header/header';
 import ConstructorPagination from './ui/pagination/pagination';
 const Constructor = ({ type }: IConstructor): React.JSX.Element => {
@@ -14,8 +13,6 @@ const Constructor = ({ type }: IConstructor): React.JSX.Element => {
 		switch (type) {
 			case 'test':
 				return <ConstructorTest isReadonly={isReadonly} />;
-			case 'theory':
-				return <ConstructorTheory isReadonly={isReadonly} />;
 			case 'code':
 			default:
 				return <ConstructorCode isReadonly={isReadonly} />;

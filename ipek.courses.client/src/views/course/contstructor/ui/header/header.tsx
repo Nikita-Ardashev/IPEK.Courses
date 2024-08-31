@@ -1,33 +1,19 @@
 import './header.sass';
 
 import iconArrow from '@img/constructor/arrow.svg';
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import { constructorSaveCode, courseTask } from '@/common/api/api';
+import { type IConstructorHeader } from '../../model/types';
 
-import { type IConstructorHeader, type TLanguages } from '../../model/types';
-
-const ConstructorHeader = ({ isReadonly, time, title }: IConstructorHeader): React.JSX.Element => {
-	const data = null;
-	const [searchParams] = useSearchParams();
+const ConstructorHeader = ({
+	isReadonly,
+	time,
+	title,
+}: IConstructorHeader): React.JSX.Element => {
 	const [getTimer, setTime] = useState<string>(time ?? '00:00:00');
 	const [getTitle, setTitle] = useState<string>(title ?? '');
-	const save = (): void => {
-		const courseId = searchParams.get('courseId') === null ? null : Number(searchParams.get('courseId'));
-	};
-	const studieId = searchParams.get('studieId') === null ? null : Number(searchParams.get('studieId'));
-
-	useEffect(() => {
-		courseTask(studieId)
-			.then((r) => {
-				setTime(r?.study.time ?? '00:00:00');
-				setTitle(r?.study.name ?? '');
-			})
-			.catch((e) => {
-				console.error(e);
-			});
-	}, [studieId]);
+	const save = (): void => {};
 	return (
 		<div className='constructor-header'>
 			<Link to={'/course/edit'} type='button' className='constructor-header__return'>
@@ -58,7 +44,12 @@ const ConstructorHeader = ({ isReadonly, time, title }: IConstructorHeader): Rea
 				step='1'
 			/>
 			{!isReadonly && (
-				<input type='button' className='constructor-header__save' onClick={save} value={'Сохранить'} />
+				<input
+					type='button'
+					className='constructor-header__save'
+					onClick={save}
+					value={'Сохранить'}
+				/>
 			)}
 		</div>
 	);

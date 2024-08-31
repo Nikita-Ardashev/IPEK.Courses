@@ -10,12 +10,12 @@ import { getColor } from '@/common/utils/getColor';
 import ModalField from '../field/field';
 
 interface IModalCourse {
-	useCallbackData: Dispatch<SetStateAction<ICourse>>;
+	useCallbackData: Dispatch<SetStateAction<Partial<ICourse>>>;
 }
 
-const ModalCourse = (props: IModalCourse): React.JSX.Element => {
+const ModalCourse = ({ useCallbackData }: IModalCourse): React.JSX.Element => {
 	const [imgSrc, setImgSrc] = useState<string>('');
-	const [icon, setIcon] = useState<File | null>(null);
+	const [icon, setIcon] = useState<string>('');
 	const [background, setBackground] = useState<string>('rgba(0,0,0,0.4)');
 	const [name, setName] = useState<string>('Название');
 	const [category, setCategory] = useState<string>('Категория');
@@ -29,7 +29,9 @@ const ModalCourse = (props: IModalCourse): React.JSX.Element => {
 		const t = e.currentTarget;
 		if (t.files === null) return;
 		const file = t.files[0];
-		setIcon(file);
+		file.text().then((r) => {
+			setIcon(r);
+		});
 		if (!file.type.includes('svg')) {
 			alert('Разрешены только изображения формата .svg');
 			return;
@@ -52,7 +54,7 @@ const ModalCourse = (props: IModalCourse): React.JSX.Element => {
 		};
 		reader.readAsDataURL(file);
 	};
-	props.useCallbackData({ background, icon, category, title: name });
+	useCallbackData({ color: background, icon, category, title: name });
 	return (
 		<div className='modal-course'>
 			<div className='modal-fields'>

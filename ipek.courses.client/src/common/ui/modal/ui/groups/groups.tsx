@@ -5,18 +5,19 @@ import iconDelete from '@img/admin/delete.svg';
 import iconUpload from '@img/admin/upload.svg';
 import React, { useState } from 'react';
 
-import { type IRegisterationGroup } from '@/common/api/api';
 import { parsingAddedListGroup } from '@/common/utils/parsingExcel';
 
 import { type IStudentInGroup } from '../../model/types';
 import ModalField from '../field/field';
 
 interface IModalGroup {
-	useCallbackData: (data: IRegisterationGroup | null) => void;
+	useCallbackData: (data: any | null) => void;
 }
 
 const ModalGroups = (props: IModalGroup): React.JSX.Element => {
-	const [groupList, setGroupList] = useState<Array<IStudentInGroup['fullname']> | null>(null);
+	const [groupList, setGroupList] = useState<Array<IStudentInGroup['fullname']> | null>(
+		null,
+	);
 	const [groupTitle, setGroupTitle] = useState<string>('');
 	const loadGroup = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		if (e.currentTarget.files === null) return;
