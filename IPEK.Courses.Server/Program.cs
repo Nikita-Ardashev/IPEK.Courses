@@ -13,8 +13,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("CoursesContextSQLite")));
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    options.UseSqlite(builder.Configuration.GetConnectionString("CoursesContextSQLite"))
+);
+builder
+    .Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDBContext>()
     .AddDefaultTokenProviders();
 builder.Services.AddLogging();
@@ -23,10 +25,21 @@ builder.Services.AddScoped<DBInitializer>();
 builder.Services.AddScoped<UserManagerExtended>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        "AllowReactApp",
+        policy =>
+        {
+            policy.WithOrigins("https://localhost:5173").AllowAnyHeader().AllowAnyMethod();
+        }
+    );
+});
+
 var app = builder.Build();
 app.UseDefaultFiles();
 app.UseStaticFiles();
-
+app.UseCors("AllowReactApp");
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
