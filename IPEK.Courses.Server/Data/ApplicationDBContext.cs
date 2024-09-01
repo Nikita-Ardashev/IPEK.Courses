@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IPEK.Courses.Server.Data
 {
-    public class ApplicationDBContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDBContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> dbContextOptions)
             : base(dbContextOptions)
@@ -139,6 +139,11 @@ namespace IPEK.Courses.Server.Data
                 .HasMany(a => a.ComplitedTestQuestions)
                 .WithOne(u => u.ApplicationUser)
                 .HasForeignKey(c => c.UserId);
+
+            modelBuilder.Entity<ApplicationUser>()
+                .HasOne(a => a.Role)
+                .WithMany(u => u.Users)
+                .HasForeignKey(c => c.RoleId);
         }
 
         public virtual DbSet<StudentGroup> StudentGroups { get; set; }

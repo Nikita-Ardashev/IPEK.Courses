@@ -10,6 +10,6 @@ namespace IPEK.Courses.Server.Domain.Entities
         public required string Answer { get; set; }
         public Guid CourseTopicId { get; set; }
         public virtual CourseTopic CourseTopic { get; set; }
-        public virtual ICollection<ComplitedCodeTask> ComplitedCodeTasks { get; set; }
+        public virtual ICollection<ComplitedCodeTask>? ComplitedCodeTasks { get; set; }
     }
 }

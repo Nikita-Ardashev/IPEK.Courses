@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Components;
 namespace IPEK.Courses.Server.Controllers
 {
     [Route("api/[controller]")]
-    public class TestQuestionController(IRepository<TestQuestion> repository) : BaseCrudController<TestQuestion>(repository)
+    public class TestQuestionController(IRepository<TestQuestion> repository) : BaseCrudController<TestQuestion, object>(repository)
     {
     }
 }

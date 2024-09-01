@@ -7,6 +7,6 @@ namespace IPEK.Courses.Server.Domain.Entities
         public string Answer{ get; set; }
         public bool IsCorrectAnswer{ get; set; }
         public Guid QuestionId { get; set; }
-        public TestQuestion TestQuestion { get; set; }
+        public virtual TestQuestion TestQuestion { get; set; }
     }
 }

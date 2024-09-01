@@ -6,6 +6,6 @@ public class Course : BaseEntity
 {
     public required byte[] BackgroundImage { get; set; }
     public required byte[] Icon { get; set; }
-    public ICollection<CourseTopic> CourseTopics { get; set; }
-    public ICollection<UserCourse> UserCourses { get; set; }
+    public virtual ICollection<CourseTopic>? CourseTopics { get; set; }
+    public virtual ICollection<UserCourse>? UserCourses { get; set; }
 }

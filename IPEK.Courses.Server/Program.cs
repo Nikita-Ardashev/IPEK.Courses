@@ -1,6 +1,5 @@
 using IPEK.Courses.Server.Data;
 using IPEK.Courses.Server.Domain.Entities;
-using IPEK.Courses.Server.Domain.Entities.BaseEntities;
 using IPEK.Courses.Server.Interfaces;
 using IPEK.Courses.Server.Services;
 using IPEK.Courses.Server.Services.Repositories;
@@ -13,8 +12,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("CoursesContextSQLite"))
-);
+{
+    options.UseLazyLoadingProxies()
+           .UseSqlite(builder.Configuration.GetConnectionString("CoursesContextSQLite"));
+});
 builder
     .Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDBContext>()
@@ -23,6 +24,7 @@ builder.Services.AddLogging();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddScoped<DBInitializer>();
 builder.Services.AddScoped<UserManagerExtended>();
+builder.Services.AddScoped<GroupManager>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 builder.Services.AddCors(options =>

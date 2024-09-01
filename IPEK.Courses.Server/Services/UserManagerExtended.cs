@@ -4,6 +4,7 @@ using IPEK.Courses.Server.Domain.Entities;
 using IPEK.Courses.Server.Domain.Models;
 using IPEK.Courses.Server.Extensions;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace IPEK.Courses.Server.Services
@@ -21,7 +22,7 @@ namespace IPEK.Courses.Server.Services
             _logger = logger;
         }
 
-        public async Task<string> CreateUser(CreateUserDto createUserDto)
+        public async Task<string> CreateUserAsync(CreateUserDto createUserDto)
         {
             if (!RoleNames.Roles.Contains(createUserDto.RoleName)) throw new Exception("Uncnown user role");
 
@@ -29,7 +30,8 @@ namespace IPEK.Courses.Server.Services
             {
                 UserName = createUserDto.Email,
                 Email = createUserDto.Email,
-                GroupId = createUserDto.GroupId
+                GroupId = createUserDto.GroupId,
+                EmailConfirmed = true
             };
 
             var createResult = await _userManager.CreateAsync(user, createUserDto.Password).Await();
@@ -37,6 +39,12 @@ namespace IPEK.Courses.Server.Services
                 throw new Exception($"Errors on create user: {ErrorsToString(createResult.Errors)}");
 
             var addToRoleResult = await _userManager.AddToRoleAsync(user, createUserDto.RoleName);
+            if (!addToRoleResult.Succeeded)
+            {
+                var role = _context.Roles.FirstOrDefault(x => x.Name == createUserDto.RoleName);
+                user.RoleId = role?.Id;
+                _ = await _userManager.UpdateAsync(user).Await();
+            }
 
             return user.Id;
         }
@@ -78,15 +86,27 @@ namespace IPEK.Courses.Server.Services
         public async Task<UserDto> GetUserById(string id)
         {
             var user = await GetUserByIdAsync(id).Await();
-            var userDto = user.ToUserDto();
+            var userDto = user.ToUserDto(true);
             return userDto;
         }
 
         public async Task<UserDto[]> GetAllUsers()
         {
             var users = await _context.Users.AsNoTracking().ToListAsync().Await();
-            var userDtos = users.Select(x => x.ToUserDto()).ToArray();
+            var userDtos = users.Select(x => x.ToUserDto(true)).ToArray();
             return userDtos;
+        }
+
+        public async Task ChangeUserRole(string userId, string newRole)
+        {
+            var user = await GetUserByIdAsync(userId);
+
+            var currentRoles = await _userManager.GetRolesAsync(user);
+            var removeResult = await _userManager.RemoveFromRolesAsync(user, currentRoles);
+            if (!removeResult.Succeeded) throw new Exception("Failed to remove current roles.");
+
+            var addResult = await _userManager.AddToRoleAsync(user, newRole);
+            if (!addResult.Succeeded) throw new Exception("User role changed successfully.");
         }
 
         private async Task<ApplicationUser> GetUserByIdAsync(string id)
@@ -97,7 +117,7 @@ namespace IPEK.Courses.Server.Services
             return user;
         }
 
-        private string ErrorsToString(IEnumerable<IdentityError> errors)
+        private static string ErrorsToString(IEnumerable<IdentityError> errors)
         {
             return string.Join(", ", errors.Select(x => x.Description));
         }
