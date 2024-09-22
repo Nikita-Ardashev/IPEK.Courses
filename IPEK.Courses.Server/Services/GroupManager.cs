@@ -5,6 +5,7 @@ using IPEK.Courses.Server.Interfaces;
 
 namespace IPEK.Courses.Server.Services
 {
+    [Obsolete("Скорее всего не нужен")]
     public class GroupManager
     {
         private readonly IRepository<StudentGroup> _studentGroupRepository;
