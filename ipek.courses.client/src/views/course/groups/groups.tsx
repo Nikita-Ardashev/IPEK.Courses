@@ -4,6 +4,7 @@ import iconArrow from '@img/constructor/arrow.svg';
 import iconClearFilter from '@img/constructor/clearFilter.svg';
 import iconDatepicker from '@img/constructor/datepicker.svg';
 import iconFilter from '@img/constructor/filter.svg';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 
 import LargeButton from '@/common/ui/largeButton/largeButton';
@@ -16,7 +17,7 @@ const filterCourses = ['1 курс', '2 курс', '3 курс', '4 курс'];
 
 const filterProgress = ['Пройдено', 'Не пройдено'];
 
-const CourseGroups = (): React.JSX.Element => {
+const CourseGroups = observer((): React.JSX.Element => {
 	return (
 		<div className='groups'>
 			<div className='groups__heading'>
@@ -32,19 +33,36 @@ const CourseGroups = (): React.JSX.Element => {
 					<CourseGroupsFilter
 						dropdownItems={filterProgress}
 						name='Прохождение'
-						img={<img src={iconArrow} style={{ rotate: '-90deg', width: '40px', height: '40px' }}></img>}
+						img={
+							<img
+								src={iconArrow}
+								style={{ rotate: '-90deg', width: '40px', height: '40px' }}
+							></img>
+						}
 					/>
-					<CourseGroupsFilter dropdownItems={filterCourses} name='Курс' img={iconDatepicker} />
+					<CourseGroupsFilter
+						dropdownItems={filterCourses}
+						name='Курс'
+						img={iconDatepicker}
+					/>
 				</div>
 				<LargeButton img={iconClearFilter} />
 			</div>
 			<div className='groups__list'>
 				{test.map((s, i) => {
-					return <ListItem to={'1'} key={s.name + i} text={s.name} index={i} isEdit />;
+					return (
+						<ListItem
+							to={'1'}
+							key={s.name + i}
+							text={s.name}
+							index={i}
+							isEdit
+						/>
+					);
 				})}
 			</div>
 		</div>
 	);
-};
+});
 
 export default CourseGroups;

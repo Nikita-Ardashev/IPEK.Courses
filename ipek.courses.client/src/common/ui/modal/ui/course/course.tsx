@@ -9,11 +9,7 @@ import { getColor } from '@/common/utils/getColor';
 
 import ModalField from '../field/field';
 
-interface IModalCourse {
-	useCallbackData: Dispatch<SetStateAction<Partial<ICourse>>>;
-}
-
-const ModalCourse = ({ useCallbackData }: IModalCourse): React.JSX.Element => {
+const ModalCourse = (): React.JSX.Element => {
 	const [imgSrc, setImgSrc] = useState<string>('');
 	const [icon, setIcon] = useState<string>('');
 	const [background, setBackground] = useState<string>('rgba(0,0,0,0.4)');
@@ -54,7 +50,6 @@ const ModalCourse = ({ useCallbackData }: IModalCourse): React.JSX.Element => {
 		};
 		reader.readAsDataURL(file);
 	};
-	useCallbackData({ color: background, icon, category, title: name });
 	return (
 		<div className='modal-course'>
 			<div className='modal-fields'>

@@ -1,3 +1,7 @@
+import { Instance } from 'mobx-state-tree';
+
+import { userModel } from '@/store/models/store';
+
 export interface ICourseTheme {
 	id: string;
 	isComplete: boolean;
@@ -22,7 +26,7 @@ export interface ICourseTest extends ICourseTheme {
 
 export interface ICourse {
 	id: string;
-	title: string;
+	name: string;
 	category: string;
 	icon: string;
 	color: string;
@@ -33,7 +37,7 @@ export interface ICourse {
 
 export interface IGroup {
 	id: string;
-	title: string;
+	name: string;
 	students: IStudent[];
 }
 
@@ -61,12 +65,44 @@ export interface IProfile extends ILogin, IStudent {
 	groups?: IGroup[];
 }
 
-const DEFAULT_HEADERS: HeadersInit = {
+export const DEFAULT_HEADERS: HeadersInit = {
 	'Content-Type': 'application/json',
 };
 
-export const getUsers = async () => {
-	const res = await fetch('http://localhost:5035/api/Users', {
+export const apiGetUsers = async () => {
+	const res = await fetch('/api/Users', {
+		method: 'get',
+		headers: { ...DEFAULT_HEADERS },
+	});
+	return res.json() as unknown as Instance<typeof userModel>;
+};
+
+export const apiGetGroups = async () => {
+	const res = await fetch('/api/StudentGroup/dto', {
+		method: 'get',
+		headers: { ...DEFAULT_HEADERS },
+	});
+	return res.json();
+};
+
+export const apiAddGroups = async () => {
+	const res = await fetch('/api/StudentGroup', {
+		method: 'post',
+		headers: { ...DEFAULT_HEADERS },
+	});
+	return res.json();
+};
+
+export const apiGetCourses = async () => {
+	const res = await fetch('/api/Course', {
+		method: 'get',
+		headers: { ...DEFAULT_HEADERS },
+	});
+	return res.json() as Promise<ICourse[]>;
+};
+
+export const apiGetCoursesTopic = async () => {
+	const res = await fetch('/api/CourseTopic', {
 		method: 'get',
 		headers: { ...DEFAULT_HEADERS },
 	});

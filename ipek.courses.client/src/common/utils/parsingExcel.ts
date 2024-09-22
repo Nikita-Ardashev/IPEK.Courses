@@ -1,6 +1,9 @@
 import { type CellObject, type ExcelDataType, read, type WorkSheet } from 'xlsx';
 
-export const parsingColumnList = (workbook: WorkSheet, columnName: string): { title: string; column: string[] } => {
+export const parsingColumnList = (
+	workbook: WorkSheet,
+	columnName: string,
+): { title: string; column: string[] } => {
 	let columnLetter: string = '';
 	for (const key in workbook) {
 		const k: CellObject = workbook[key];
@@ -31,9 +34,13 @@ export const getCell = (workbook: WorkSheet | ExcelDataType, cell: string): stri
 	return Object.values(workbook)[i].v;
 };
 
-export const parsingAddedListGroup = (data: Uint8Array): { column: string[]; title: string } => {
+export const parsingAddedListGroup = (
+	data: Uint8Array,
+): { column: string[]; title: string } => {
 	const d = new Uint8Array(data);
-	const workbook = Object.values(Object.values(read(d, { type: 'array' }))[2])[0] as WorkSheet;
+	const workbook = Object.values(
+		Object.values(read(d, { type: 'array' }))[2],
+	)[0] as WorkSheet;
 	const { column } = parsingColumnList(workbook, 'ФИО');
 	const title = getCell(workbook, 'C3');
 	return { column, title };

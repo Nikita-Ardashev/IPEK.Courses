@@ -12,7 +12,6 @@
         font-weight: 400
         line-height: 44px
         text-align: left
-        margin-bottom: 16px
 
 .profile__info
     display: flex
@@ -24,6 +23,7 @@
         display: flex
         flex-direction: column
         align-items: flex-start
+        gap: 4px
 
         p
             font-family: $Roboto
@@ -31,11 +31,13 @@
             font-weight: 400
             line-height: 18.75px
             text-align: left
+            color: rgba(0, 0, 0, 0.6)
 
 .profile__complete-courses, .profile__groups, .profile__courses
     display: flex
     flex-direction: column
     width: 100%
+    gap: 16px
 
 .profile__courses-row, .profile__complete-row, .profile__groups-row
     display: flex
@@ -44,3 +46,4 @@
     padding: 4px
     gap: 32px
     overflow-x: auto
+    scroll-snap-type: x mandatory

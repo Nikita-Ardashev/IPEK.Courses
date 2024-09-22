@@ -10,9 +10,6 @@
 		"lin-fix": "eslint . --fix",
 		"preview": "vite preview"
 	},
-	"browserslist": [
-		"cover 99.5%"
-	],
 	"devDependencies": {
 		"@eslint/js": "^9.1.1",
 		"@monaco-editor/react": "^4.6.0",
@@ -22,7 +19,7 @@
 		"@typescript-eslint/eslint-plugin": "^7.8.0",
 		"@typescript-eslint/parser": "^7.8.0",
 		"@vitejs/plugin-react": "^4.2.1",
-		"autoprefixer": "^10.4.19",
+		"autoprefixer": "^10.4.20",
 		"babel-eslint": "^10.1.0",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
@@ -53,8 +50,10 @@
 		"localforage": "^1.10.0",
 		"match-sorter": "^6.3.4",
 		"mobx": "^6.13.1",
+		"mobx-react-lite": "^4.0.7",
 		"mobx-state-tree": "^6.0.1",
 		"monaco-editor": "^0.50.0",
+		"postcss": "^8.4.47",
 		"quill": "^2.0.0",
 		"react-hotkeys-hook": "^4.5.0",
 		"react-router-dom": "^6.23.0",

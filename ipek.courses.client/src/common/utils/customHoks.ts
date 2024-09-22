@@ -11,7 +11,7 @@ interface IUseCheckResponese<T> {
 	data: ICheckReponseData<T>;
 }
 
-export const useCheckReponse = <T>(promise: () => Promise<T>): IUseCheckResponese<T> => {
+export const useFetch = <T>(promise: () => Promise<T>): IUseCheckResponese<T> => {
 	const [data, setData] = useState<ICheckReponseData<T>>({
 		result: null,
 		error: null,
@@ -23,12 +23,11 @@ export const useCheckReponse = <T>(promise: () => Promise<T>): IUseCheckRespones
 			const newV = { ...v, loading: true };
 			return newV;
 		});
+		const r = await promise();
 		try {
-			promise().then((r) => {
-				setData((v) => {
-					const newV = { ...v, result: r, loading: false };
-					return newV;
-				});
+			setData((v) => {
+				const newV = { ...v, result: r, loading: false };
+				return newV;
 			});
 		} catch (e) {
 			setData((v) => {
@@ -36,6 +35,11 @@ export const useCheckReponse = <T>(promise: () => Promise<T>): IUseCheckRespones
 				return newV;
 			});
 			throw new Error(e);
+		} finally {
+			setData((v) => {
+				const newV = { ...v, loading: false };
+				return newV;
+			});
 		}
 	};
 

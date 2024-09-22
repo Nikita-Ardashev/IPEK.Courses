@@ -62,6 +62,7 @@
         @include viewDrop(false)
         scrollbar-gutter: stable
         border-radius: 0 0 8px 8px
+        scroll-snap-type: y mandatory
 
         &:active, &:focus-within
             @include viewDrop()
@@ -69,6 +70,7 @@
         span
             @include text()
             padding: 4px
+            scroll-snap-align: end
 
             &:hover
                 background: rgba(0, 0, 0, 0.1)

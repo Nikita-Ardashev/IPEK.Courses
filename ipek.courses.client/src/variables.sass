@@ -25,19 +25,20 @@ $Roboto: 'Roboto'
 $Sans: 'Sans'
 $Ubuntu: 'Ubuntu'
 
-@function stateChange($color, $alpha, $isBlack, $blackPercent)
-	@if $isBlack
-		@return color.change($color, $blackness: $blackPercent)
-	@else
-		@return color.change($color, $alpha: $alpha)
+@mixin stateField($color)
+	&:hover
+		background: mix(adjust-color($color), white, 20)
 
 @mixin stateBtn($color, $isBlack: false)
 	transition: $transition
+	$c: white
+	@if $isBlack
+		$c: black
 	&:hover
-		background: stateChange($color, $alpha: 0.88, $isBlack: $isBlack, $blackPercent: 6%)
+		background: mix(adjust-color($color), $c, 88)
 	&:active
-		background: stateChange($color, $alpha: 0.88, $isBlack: $isBlack, $blackPercent: 6%)
+		background: mix(adjust-color($color), $c, 88)
 	&:focus
-		background: stateChange($color, $alpha: 0.6, $isBlack: $isBlack, $blackPercent: 10%)
+		background: mix(adjust-color($color), $c, 60)
 	&:disabled
-		background: stateChange($color, $alpha: 0.24, $isBlack: $isBlack, $blackPercent: 24%)
+		background: mix(adjust-color($color), $c, 24)
