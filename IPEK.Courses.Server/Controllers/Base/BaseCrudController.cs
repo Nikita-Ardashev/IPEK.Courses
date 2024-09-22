@@ -9,44 +9,42 @@ namespace IPEK.Courses.Server.Controllers.Base
     /// Базовый контролер для простых действий с сущностю
     /// </summary>
     /// <typeparam name="TEntity">Любой наследник:<see cref="BaseEntity"/></typeparam>
-    public class BaseCrudController<TEntity, TEntityDto> : ControllerBase 
+    public class BaseCrudController<TEntity, TDto> : ControllerBase 
         where TEntity : BaseEntity
-        where TEntityDto : class
+        where TDto : class
     {
-        private readonly IRepository<TEntity> _repository;
+        protected readonly IRepository<TEntity> _repository;
 
         protected BaseCrudController(IRepository<TEntity> repository)
         {
             _repository = repository;
         }
 
-        [HttpGet]
-        public virtual async Task<ActionResult<IEnumerable<TEntity>>> GetAllEntities() => await _repository.GetAllAsync().ToActionResult();
+        //[HttpGet]
+        //public virtual async Task<ActionResult<IEnumerable<TEntity>>> GetAllEntities() => await _repository.GetAllAsync().ToActionResult();
 
-        [HttpGet("dto")]
-        public virtual async Task<ActionResult<IEnumerable<TEntityDto>>> GetEntityAsDto()
+        [HttpGet]
+        public virtual async Task<ActionResult<IEnumerable<TDto>>> GetEntityAsDto()
         {
-            var entity = await _repository
-                .GetAllAsync()
-                .ContinueWith(async x =>
+            var entity = await _repository.GetAllAsync().ContinueWith(async task =>
             {
-                var q = await x;
-                return q.Select(x => (TEntityDto) x.ToDto());
+                var entityCollection = await task;
+                return entityCollection.Select(concreteEntity => (TDto) concreteEntity.ToDto());
             });
             return await entity.ToActionResult();
         }
 
         // GET: api/StudentGroups/5
-        [HttpGet("{id}")]
-        public virtual async Task<ActionResult<TEntity>> GetOneById(Guid id) => await _repository.GetByIdAsync(id).ToActionResult();
+        [HttpGet("id")]
+        public virtual async Task<ActionResult<TDto>> GetOneById(Guid id) => await _repository.GetByIdAsync(id).ToDto<TEntity, TDto>().ToActionResult();
 
         // POST: api/StudentGroups
         [HttpPost]
-        public virtual async Task<ActionResult<TEntity>> CreateEntity(TEntity courseTopic) => await _repository.AddAsync(courseTopic).ToActionResult();
+        public virtual async Task<ActionResult<TDto>> CreateEntity(TEntity entity) => await _repository.AddAsync(entity).ToDto<TEntity, TDto>().ToActionResult();
 
         // PUT: api/StudentGroups/5
         [HttpPut]
-        public virtual async Task<ActionResult<TEntity>> UpdateEntity(TEntity courseTopic) => await _repository.UpdateAsync(courseTopic).ToActionResult();
+        public virtual async Task<ActionResult<TDto>> UpdateEntity(TEntity entity) => await _repository.UpdateAsync(entity).ToDto<TEntity, TDto>().ToActionResult();
 
         // DELETE: api/StudentGroups/5
         [HttpDelete("{id}")]

@@ -30,7 +30,7 @@ namespace IPEK.Courses.Server.Controllers
             await _userManager.ChangeUserEmail(id, newEmail).ToActionResult();
 
         [HttpPut(nameof(ChangeUserGroup))]
-        public async Task<IActionResult> ChangeUserGroup(string id, string groupId) =>
+        public async Task<IActionResult> ChangeUserGroup(string id, Guid groupId) =>
             await _userManager.ChangeUserGroup(id, groupId).ToActionResult();
 
         [HttpDelete("{id}")]

@@ -2,7 +2,7 @@
 
 namespace IPEK.Courses.Server.Domain.Entities
 {
-    public class ComplitedTestQuestion : BaseComplitedTask<TestQuestion>
+    public class ComplitedTestQuestion : BaseComplitedTaskGeneric<TestQuestion>
     {
     }
 }

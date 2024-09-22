@@ -18,7 +18,7 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
         .UseSqlite(builder.Configuration.GetConnectionString("CoursesContextSQLite"));
 });
 builder
-    .Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .Services.AddIdentity<ApplicationUser, ApplicationRole>()
     .AddEntityFrameworkStores<ApplicationDBContext>()
     .AddDefaultTokenProviders();
 builder.Services.AddLogging();
@@ -26,6 +26,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddScoped<DBInitializer>();
 builder.Services.AddScoped<UserManagerExtended>();
 builder.Services.AddScoped<GroupManager>();
+builder.Services.AddScoped<ITaskWithUserContextProvider, TaskWithUserContextProvider>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 builder.Services.AddCors(options =>

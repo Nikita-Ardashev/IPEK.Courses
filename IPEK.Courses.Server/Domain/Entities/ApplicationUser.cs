@@ -4,6 +4,9 @@ namespace IPEK.Courses.Server.Domain.Entities
 {
     public class ApplicationUser : IdentityUser
     {
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+        public string ThirdName { get; set; }
         public string? RoleId { get; set; }
         public virtual ApplicationRole Role { get; set; }
         public Guid? GroupId { get; set; }

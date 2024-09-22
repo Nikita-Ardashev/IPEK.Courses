@@ -1,24 +1,46 @@
-﻿using IPEK.Courses.Server.Domain.Entities;
+﻿using IPEK.Courses.Server.Data;
+using IPEK.Courses.Server.Domain.Entities;
 using IPEK.Courses.Server.Domain.Models;
 using IPEK.Courses.Server.Extensions;
-using IPEK.Courses.Server.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace IPEK.Courses.Server.Services
 {
-    [Obsolete("Скорее всего не нужен")]
-    public class GroupManager
+    public class GroupManager(UserManagerExtended userManager, ApplicationDBContext context)
     {
-        private readonly IRepository<StudentGroup> _studentGroupRepository;
-
-        public GroupManager(IRepository<StudentGroup> studentGroupRepository)
+        public async Task<GroupDto> CreateGroupWithStudents(string groupName, CreateUserDto[] users)
         {
-            _studentGroupRepository = studentGroupRepository;
+            var group = await GetByName(groupName) ?? await CreateByName(groupName);
+            group.UserIds = [];
+
+            foreach (var user in users)
+            {
+                user.GroupId = group.Id;
+                var createdUSerId = await userManager.CreateUserAsync(user);
+                group.UserIds.Add(createdUSerId);
+            }
+
+            return group;
         }
 
-        public async Task<GroupDto> GetGroupById(Guid id)
+        public async Task<GroupDto> CreateByName(string groupName)
         {
-            var studentGroup = await _studentGroupRepository.GetByIdAsync(id);
+            var studentGroup = new StudentGroup
+            {
+                Id = Guid.NewGuid(),
+                Name = groupName,
+            };
+
+            await context.AddAsync(studentGroup);
+            await context.SaveChangesAsync();
+
             return studentGroup.ToDto();
+        }
+
+        public async Task<GroupDto?> GetByName(string groupName)
+        {
+            var studentGroup = await context.StudentGroups.FirstOrDefaultAsync(x => x.Name == groupName);
+            return studentGroup?.ToDto();
         }
     }
 }

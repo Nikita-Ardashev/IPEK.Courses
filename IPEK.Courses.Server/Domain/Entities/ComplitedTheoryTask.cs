@@ -2,5 +2,5 @@
 
 namespace IPEK.Courses.Server.Domain.Entities
 {
-    public class ComplitedTheoryTask : BaseComplitedTask<TheoryTask> { }
+    public class ComplitedTheoryTask : BaseComplitedTaskGeneric<TheoryTask> { }
 }

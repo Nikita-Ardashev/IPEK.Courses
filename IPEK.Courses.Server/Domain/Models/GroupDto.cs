@@ -4,6 +4,6 @@
     {
         public required Guid Id { get; set; }
         public string? Name { get; set; }
-        public ICollection<UserDto>? Users { get; set; }
+        public ICollection<string>? UserIds { get; set; }
     }
 }

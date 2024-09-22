@@ -9,16 +9,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace IPEK.Courses.Server.Controllers
 {
     [Route("api/[controller]")]
-    public class StudentGroupController : BaseCrudController<StudentGroup, GroupDto>
+    public class StudentGroupController(IRepository<StudentGroup> repository, GroupManager groupManager) : BaseCrudController<StudentGroup, GroupDto>(repository)
     {
-        private readonly GroupManager _groupManager;
 
-        public StudentGroupController(IRepository<StudentGroup> repository, GroupManager groupManager) : base(repository)
-        {
-            _groupManager = groupManager;
-        }
-
-        [HttpGet("groupWithStudents")]
-        public virtual async Task<ActionResult<GroupDto>> GetStudentGroupWithUser(Guid id) => await _groupManager.GetGroupById(id).ToActionResult();
+        [HttpPost("createGroupWithStudents")]
+        public virtual async Task<ActionResult<GroupDto>> CreateGroupWithStudents(string groupName, CreateUserDto[] users) =>
+            await groupManager.CreateGroupWithStudents(groupName, users).ToActionResult();
     }
 }

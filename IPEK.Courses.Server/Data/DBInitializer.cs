@@ -10,7 +10,7 @@ namespace IPEK.Courses.Server.Data
     public class DBInitializer
     {
         private readonly ApplicationDBContext _context;
-        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly UserManagerExtended _userManager;
         private readonly ILogger<DBInitializer> _logger;
 
@@ -21,7 +21,7 @@ namespace IPEK.Courses.Server.Data
 
         public DBInitializer(
             ApplicationDBContext context,
-            RoleManager<IdentityRole> roleManager,
+            RoleManager<ApplicationRole> roleManager,
             UserManagerExtended userManager,
             ILogger<DBInitializer> logger) 
         {
@@ -54,6 +54,9 @@ namespace IPEK.Courses.Server.Data
                 Email = AdminEmail,
                 Password = "Admin@123",
                 RoleName = RoleNames.AdminRoleName,
+                FirstName = "Илья",
+                SecondName = "Ильин",
+                ThirdName = "Ильич"
             };
             await _userManager.CreateUserAsync(adminUser);
 
@@ -62,6 +65,9 @@ namespace IPEK.Courses.Server.Data
                 Email = TeacherEmail,
                 Password = "Teacher@123",
                 RoleName = RoleNames.TeacherRoleName,
+                FirstName = "Илья",
+                SecondName = "Ильин",
+                ThirdName = "Ильич"
             };
             await _userManager.CreateUserAsync(teacherUser);
 
@@ -71,6 +77,9 @@ namespace IPEK.Courses.Server.Data
                 GroupId = _context.StudentGroups.FirstOrDefault(x => x.Name == "Group A")?.Id,
                 Password = "Student@123",
                 RoleName = RoleNames.StudentRoleName,
+                FirstName = "Илья",
+                SecondName = "Ильин",
+                ThirdName = "Ильич"
             };
             await _userManager.CreateUserAsync(studentUser1);
 
@@ -80,6 +89,9 @@ namespace IPEK.Courses.Server.Data
                 GroupId = _context.StudentGroups.FirstOrDefault(x => x.Name == "Group B")?.Id,
                 Password = "Student@123",
                 RoleName = RoleNames.StudentRoleName,
+                FirstName = "Илья",
+                SecondName = "Ильин",
+                ThirdName = "Ильич"
             };
             await _userManager.CreateUserAsync(studentUser2);
         }
@@ -91,7 +103,9 @@ namespace IPEK.Courses.Server.Data
             {
                 if (!await _roleManager.RoleExistsAsync(role))
                 {
-                    await _roleManager.CreateAsync(new IdentityRole(role));
+                    var appRole = new ApplicationRole();
+                    appRole.Name = role;
+                    await _roleManager.CreateAsync(appRole);
                 }
             }
         }

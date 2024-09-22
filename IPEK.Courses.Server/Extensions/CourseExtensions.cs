@@ -4,21 +4,18 @@ namespace IPEK.Courses.Server.Extensions
 {
     public static class CourseExtensions
     {
-        public static CourseDto ToDto(this Course entity, bool includeChildsDto = false)
+        public static CourseDto ToDto(this Course entity)
         {
             var result = new CourseDto
             {
                 Id = entity.Id,
-                Icon = entity.Icon.ToArray(),
-                BackgroundImage = entity.BackgroundImage.ToArray(),
+                Icon = entity.Icon,
+                BackgroundImage = entity.BackgroundImage,
                 Name = entity.Name,
-                Description = entity.Description                
+                Description = entity.Description,
+                CourseTopics = entity.CourseTopics?.Select(x => x.Id).ToArray(),
             };
-            if (includeChildsDto)
-            {
-                result.CourseTopics = entity.CourseTopics?.Select(x => x.ToDto(true)).ToArray();
-                result.UserCourses = entity.UserCourses?.ToArray();
-            }
+
             return result;
         }
     }

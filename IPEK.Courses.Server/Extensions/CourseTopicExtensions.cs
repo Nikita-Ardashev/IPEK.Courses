@@ -5,17 +5,17 @@ namespace IPEK.Courses.Server.Extensions
 {
     public static class CourseTopicExtensions
     {
-        public static CourseTopicDto ToDto(this CourseTopic entity, bool includeChildsDto = false)
+        public static CourseTopicDto ToDto(this CourseTopic entity)
         {
-            ArgumentNullException.ThrowIfNull(entity, nameof(CodeTask));
+            ArgumentNullException.ThrowIfNull(entity, nameof(CourseTopic));
+
             var result = entity.Clone() as CourseTopicDto;
+
             ArgumentNullException.ThrowIfNull(result, nameof(CourseTopicDto));
-            if (includeChildsDto)
-            {
-                result.Tests = entity.Tests?.ToArray();
-                result.Theories = entity.Theories?.ToArray();
-                result.Codes = entity.Codes?.ToArray();
-            }
+
+            result.Tests = entity.Tests?.Select(x=> x.Id).ToArray();
+            result.Theories = entity.Theories?.Select(x => x.Id).ToArray();
+            result.Codes = entity.Codes?.Select(x => x.Id).ToArray();
             return result;
         }
     }
