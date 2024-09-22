@@ -1,29 +1,40 @@
 import './profile.sass';
 
+import iconPencil from '@img/account/pencil.svg';
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 
-const Profile = (): React.JSX.Element => {
-	const isAdmin = false;
+import GroupCard from '@/common/ui/groupCard/card';
+import LargeButton from '@/common/ui/largeButton/largeButton';
+import { store } from '@/store/store';
 
+const Profile = observer((): React.JSX.Element => {
+	const profile = store.user?.getProfile;
+	const isEditable = profile?.roleName === 'Admin';
 	return (
 		<div className='profile'>
-			{isAdmin && (
+			{profile?.roleName === 'Admin' && (
 				<div className='profile__info'>
 					<div>
-						<h2></h2>
-						<p></p>
+						<h2>{`${profile.firstName} ${profile.secondName} ${profile.thridName}`}</h2>
+						<p>{profile.email}</p>
+						<p>{profile.group}</p>
 					</div>
-					{/* <LargeButton img={iconPencil} /> */}
+					{isEditable && <LargeButton img={iconPencil} />}
 				</div>
 			)}
 			<div className='profile__courses'>
 				<h2>Курсы</h2>
 				<div className='profile__courses-row'></div>
 			</div>
-			{isAdmin ? (
+			{profile?.roleName === 'Admin' ? (
 				<div className='profile__groups'>
 					<h2>Группы</h2>
-					<div className='profile__groups-row'></div>
+					<div className='profile__groups-row'>
+						{store.getGroups.map((g) => {
+							return <GroupCard key={g.id} nameGroup={g.name} id={g.id} />;
+						})}
+					</div>
 				</div>
 			) : (
 				<div className='profile__complete-courses'>
@@ -33,6 +44,6 @@ const Profile = (): React.JSX.Element => {
 			)}
 		</div>
 	);
-};
+});
 
 export default Profile;

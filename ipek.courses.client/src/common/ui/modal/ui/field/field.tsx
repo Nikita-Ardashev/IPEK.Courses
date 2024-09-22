@@ -1,6 +1,10 @@
 import './field.sass';
 
-import React, { useRef, useState } from 'react';
+import iconArrow from '@img/greyArrow.svg';
+import iconSearch from '@img/search.svg';
+import React, { HTMLInputTypeAttribute, useRef, useState } from 'react';
+
+import Dropdown from '@/common/ui/dropdown/dropdown';
 interface IModalField {
 	className?: string;
 	style?: Record<string, string>;
@@ -8,7 +12,7 @@ interface IModalField {
 	value?: string;
 	placeholder?: string;
 	onChange?: (e: React.ChangeEvent<HTMLInputElement> | HTMLInputElement) => void;
-	typeField?: string;
+	typeField?: HTMLInputTypeAttribute;
 	readonly?: boolean;
 	name?: string;
 }
@@ -24,54 +28,27 @@ const ModalField = ({
 	readonly = false,
 	name = '',
 }: IModalField): React.JSX.Element => {
-	const [isDrop, setIsDrop] = useState<boolean>(false);
-	const [selectValue, setSelectValue] = useState<string>(value ?? placeholder);
-	const dropdownSelect = useRef<HTMLInputElement | null>(null);
-	const dropdown = (): void => {
-		setIsDrop(!isDrop);
+	const inputAttr = {
+		name: name,
+		type: typeField,
+		style: style,
+		className: `modal-field ${className}`,
+		value: value,
+		placeholder: placeholder,
+		readOnly: readonly,
 	};
-	const selectItem = (e: React.MouseEvent<HTMLInputElement>): void => {
-		if (dropdownSelect.current === null) return;
-		const value = e.currentTarget.value;
-		const select = dropdownSelect.current;
-		setSelectValue(value);
-		select.style.color = '#000';
-		onChange(e.currentTarget);
-	};
+	const [selectValue, setSelectValue] = useState<string>('');
+
 	if (dropdownItems === null) {
-		return (
-			<input
-				name={name}
-				type={typeField}
-				style={style}
-				className={`modal-field ${className}`}
-				value={value}
-				placeholder={placeholder}
-				onChange={onChange}
-				readOnly={readonly}
-			/>
-		);
+		return <input {...inputAttr} onChange={onChange} />;
 	}
 	return (
-		<label className='modal-dropdown'>
-			<input
-				name={name}
-				type='button'
-				style={style}
-				className={`modal-field ${className}`}
-				value={selectValue}
-				onClick={dropdown}
-				onBlur={dropdown}
-				ref={dropdownSelect}
-			/>
-			{isDrop && (
-				<div>
-					{dropdownItems.map((item, i) => {
-						return <input type='button' key={`${item}-${i}`} value={item} onMouseDown={selectItem} />;
-					})}
-				</div>
-			)}
-		</label>
+		<Dropdown
+			className='modal-dropdown'
+			list={dropdownItems}
+			setCurrent={setSelectValue}
+			defaultCurrent='Группа'
+		/>
 	);
 };
 

@@ -35,3 +35,10 @@ ops/*.retry
 # IDE
 .idea/
 .vs/
+
+# DB
+*.db
+*.db-shm
+*.db-wal
+
+

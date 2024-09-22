@@ -13,8 +13,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
 {
-    options.UseLazyLoadingProxies()
-           .UseSqlite(builder.Configuration.GetConnectionString("CoursesContextSQLite"));
+    options
+        .UseLazyLoadingProxies()
+        .UseSqlite(builder.Configuration.GetConnectionString("CoursesContextSQLite"));
 });
 builder
     .Services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -33,7 +34,10 @@ builder.Services.AddCors(options =>
         "AllowReactApp",
         policy =>
         {
-            policy.WithOrigins("https://localhost:5173").AllowAnyHeader().AllowAnyMethod();
+            policy
+                .WithOrigins("https://localhost:5173", "http://localhost:5035")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
         }
     );
 });

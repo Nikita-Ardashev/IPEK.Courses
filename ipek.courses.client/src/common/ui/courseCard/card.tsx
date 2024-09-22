@@ -36,9 +36,9 @@ const CourseCard = ({
 			</div>
 		</>
 	);
-	const attrCard = { className: 'course-card', style: { background } };
+	const attrCard = { className: 'course-card__box', style: { background } };
 	return (
-		<div onClick={onClick} className='course-card-box'>
+		<div onClick={onClick} className='course-card'>
 			{linkCourse !== null ? (
 				<Link to={linkCourse} {...attrCard}>
 					{content}

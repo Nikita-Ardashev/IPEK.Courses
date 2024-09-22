@@ -1,7 +1,7 @@
 import './groups.sass';
 
 import iconDelete from '@img/admin/delete.svg';
-// import iconPencil from '@img/admin/pencil.svg';
+import iconPencil from '@img/admin/pencil.svg';
 import iconUpload from '@img/admin/upload.svg';
 import React, { useState } from 'react';
 
@@ -10,11 +10,7 @@ import { parsingAddedListGroup } from '@/common/utils/parsingExcel';
 import { type IStudentInGroup } from '../../model/types';
 import ModalField from '../field/field';
 
-interface IModalGroup {
-	useCallbackData: (data: any | null) => void;
-}
-
-const ModalGroups = (props: IModalGroup): React.JSX.Element => {
+const ModalGroups = (): React.JSX.Element => {
 	const [groupList, setGroupList] = useState<Array<IStudentInGroup['fullname']> | null>(
 		null,
 	);
@@ -32,7 +28,6 @@ const ModalGroups = (props: IModalGroup): React.JSX.Element => {
 			const { column, title } = parsingAddedListGroup(e.target.result as Uint8Array);
 			setGroupTitle(title);
 			setGroupList(column);
-			props.useCallbackData({ group: title, users: column });
 		};
 		reader.onerror = (err) => {
 			console.log(err);
@@ -51,14 +46,14 @@ const ModalGroups = (props: IModalGroup): React.JSX.Element => {
 				{groupList?.map((student) => (
 					<div key={student}>
 						<p>{student}</p>
-						{/* <span>
+						<span>
 							<button>
 								<img src={iconPencil} alt='' />
 							</button>
 							<button>
 								<img src={iconDelete} alt='' />
 							</button>
-						</span> */}
+						</span>
 					</div>
 				))}
 			</div>

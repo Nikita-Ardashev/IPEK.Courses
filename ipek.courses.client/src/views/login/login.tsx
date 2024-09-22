@@ -9,7 +9,7 @@ const Login = (): React.JSX.Element => {
 		<div className='login'>
 			<div className='login__box'>
 				<h1>Вход</h1>
-				<div className='login__box-fields'>
+				<form className='login__box-fields'>
 					<input
 						type='text'
 						placeholder='Логин'
@@ -33,7 +33,7 @@ const Login = (): React.JSX.Element => {
 							Неправильный логин или пароль
 						</p>
 					}
-				</div>
+				</form>
 				<button type='button' className='login__submit'>
 					Войти
 				</button>

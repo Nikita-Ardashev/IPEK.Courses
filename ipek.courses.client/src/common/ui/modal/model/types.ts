@@ -26,7 +26,13 @@ export interface IModalEdit {
 	onCreate: () => void;
 }
 
-export type TModalStudent = 'firstName' | 'secondName' | 'thridName' | 'group' | 'login' | 'password';
+export type TModalStudent =
+	| 'firstName'
+	| 'secondName'
+	| 'thridName'
+	| 'group'
+	| 'login'
+	| 'password';
 
 export interface IModalStudentFields {
 	firstName?: string;
@@ -35,9 +41,6 @@ export interface IModalStudentFields {
 	group?: string;
 	login?: string;
 	password?: string;
-}
-export interface IModalStudent extends IModalStudentFields {
-	useCallbackStudentData?: (fileds: IModalStudentFields) => IModalStudentFields;
 }
 
 export interface IStudentInGroup {
@@ -57,7 +60,7 @@ export interface IModalEditCourse {
 }
 
 export interface IModalEditData {
-	student: IModalStudent;
+	student: IModalStudentFields;
 	groups: IModalEditGroups;
 	course: IModalEditCourse;
 }

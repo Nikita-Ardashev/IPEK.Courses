@@ -3,7 +3,7 @@ import './codeEditor.sass';
 import { Editor, EditorProps } from '@monaco-editor/react';
 import React, { useState } from 'react';
 
-import { langTool } from '@/store/utils';
+import { store } from '@/store/store';
 import { ILanguage } from '@/views/course/contstructor/model/types';
 
 import Dropdown from '../dropdown/dropdown';
@@ -19,7 +19,7 @@ interface ICodeHighlight {
 
 // const newTheme = editor.defineTheme('IPEK', {});
 
-const langs = langTool.getLangs;
+const langs = store.languages.getLangs;
 const defaultLang = langs.find((l) => l.id === 'plaintext') as ILanguage;
 const defaultEditorProps: EditorProps = {
 	loading: <Preloader />,
