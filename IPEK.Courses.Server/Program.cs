@@ -5,6 +5,7 @@ using IPEK.Courses.Server.Services;
 using IPEK.Courses.Server.Services.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -18,7 +19,16 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
         .UseSqlite(builder.Configuration.GetConnectionString("CoursesContextSQLite"));
 });
 builder
-    .Services.AddIdentity<ApplicationUser, ApplicationRole>()
+    .Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
+    {
+        options.SignIn.RequireConfirmedAccount = true;
+        options.User.RequireUniqueEmail = true;
+        options.Password.RequiredLength = 6;
+        options.Password.RequireDigit = false;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequireLowercase = false;
+        options.Password.RequireUppercase = false;
+    })
     .AddEntityFrameworkStores<ApplicationDBContext>()
     .AddDefaultTokenProviders();
 builder.Services.AddLogging();

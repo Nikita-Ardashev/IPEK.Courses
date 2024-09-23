@@ -4,7 +4,7 @@ namespace IPEK.Courses.Server.Domain.Models
 {
     public class CourseDto : BaseEntity
     {
-        public byte[] BackgroundImage { get; set; }
+        public string BackgroundColorCode { get; set; }
         public byte[] Icon { get; set; }
         public virtual ICollection<Guid>? CourseTopics { get; set; }
         public bool Complited { get; set; }

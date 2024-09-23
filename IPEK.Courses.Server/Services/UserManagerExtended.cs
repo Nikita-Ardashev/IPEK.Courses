@@ -107,6 +107,14 @@ namespace IPEK.Courses.Server.Services
             await _context.SaveChangesAsync();
         }
 
+        public async Task ChangeUserPassword(string userId, string newPassword)
+        {
+            var user = await GetUserByIdAsync(userId);
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var result = await _userManager.ResetPasswordAsync(user, token, newPassword);
+            if (!result.Succeeded) throw new Exception($"Errors on ChangeUserPassword: {string.Join(", ", result.Errors)}");
+        }
+
         private async Task<ApplicationUser> GetUserByIdAsync(string id)
         {
             var user = await _userManager.FindByIdAsync(id).Await();

@@ -48,5 +48,9 @@ namespace IPEK.Courses.Server.Controllers
         [HttpPost(nameof(ChangeUserRole))]
         public async Task<IActionResult> ChangeUserRole(string userId, string newRole) =>
             await _userManager.ChangeUserRole(userId, newRole).ToActionResult();
+
+        [HttpPost(nameof(ChangeUserPassword))]
+        public async Task<IActionResult> ChangeUserPassword(string userId, string newPassword) =>
+            await _userManager.ChangeUserPassword(userId, newPassword).ToActionResult();
     }
 }

@@ -10,7 +10,7 @@ namespace IPEK.Courses.Server.Extensions
             {
                 Id = entity.Id,
                 Icon = entity.Icon,
-                BackgroundImage = entity.BackgroundImage,
+                BackgroundColorCode = entity.BackgroundColorCode,
                 Name = entity.Name,
                 Description = entity.Description,
                 CourseTopics = entity.CourseTopics?.Select(x => x.Id).ToArray(),

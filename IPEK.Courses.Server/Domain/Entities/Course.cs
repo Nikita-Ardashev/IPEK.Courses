@@ -4,8 +4,8 @@ namespace IPEK.Courses.Server.Domain.Entities;
 
 public class Course : BaseEntity
 {
-    public required byte[] BackgroundImage { get; set; }
-    public required byte[] Icon { get; set; }
-    public virtual ICollection<CourseTopic>? CourseTopics { get; set; }
-    public virtual ICollection<UserCourse>? UserCourses { get; set; }
+    public required string BackgroundColorCode { get; set; }
+    public byte[] Icon { get; set; }
+    public virtual ICollection<CourseTopic> CourseTopics { get; set; }
+    public virtual ICollection<UserCourse> UserCourses { get; set; }
 }
