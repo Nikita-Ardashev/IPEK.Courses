@@ -8,8 +8,12 @@ const getColorRGBFromArr = (colors) => {
 };
 
 const getColor = (img) => {
-	const colors = colorThief.getColor(img);
-	return getColorRGBFromArr(colors);
+	try {
+		const colors = colorThief.getColor(img);
+		return colors;
+	} catch {
+		return [255, 255, 255];
+	}
 };
 
 const getPalette = (img) => {

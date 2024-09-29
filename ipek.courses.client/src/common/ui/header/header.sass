@@ -21,9 +21,12 @@ header
 	position: relative
 
 	a
+		display: flex
 		img
 			border-radius: 50%
 			@include stateBtn($white-color, true)
+			&:hover
+				scale: 1.2
 
 	p
 		font-family: $Roboto

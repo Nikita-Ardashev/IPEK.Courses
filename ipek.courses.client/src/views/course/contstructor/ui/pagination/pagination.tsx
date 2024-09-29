@@ -1,6 +1,6 @@
 import './pagination.sass';
 
-import iconArrow from '@img/constructor/arrow.svg';
+import { iconArrow } from '@assets/assets';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +11,10 @@ interface IConstructorPagination {
 	totalPages: number;
 }
 
-const ConstructorPagination = ({ page, totalPages }: IConstructorPagination): React.JSX.Element => {
+const ConstructorPagination = ({
+	page,
+	totalPages,
+}: IConstructorPagination): React.JSX.Element => {
 	return (
 		<div className='constructor-pagination'>
 			<Link to={''} className='constructor-pagination__btn' type='button'>

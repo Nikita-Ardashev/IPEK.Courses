@@ -1,6 +1,6 @@
 import './header.sass';
 
-import iconArrow from '@img/constructor/arrow.svg';
+import { iconArrow } from '@assets/assets';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 

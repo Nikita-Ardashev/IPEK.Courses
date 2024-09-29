@@ -1,4 +1,4 @@
-import iconCheck from '@img/constructor/check.svg';
+import { iconCheck } from '@assets/assets';
 import React from 'react';
 
 import { type ICheckAnswer, type IRenameAnswer, type TTrueAnswers } from '../test';
@@ -11,7 +11,13 @@ interface ITestAnswer {
 	trueAnswer: TTrueAnswers | number | null;
 }
 
-const TestAnswer = ({ checkAnswer, renameAnswer, index, trueAnswer, questIndex }: ITestAnswer): React.JSX.Element => {
+const TestAnswer = ({
+	checkAnswer,
+	renameAnswer,
+	index,
+	trueAnswer,
+	questIndex,
+}: ITestAnswer): React.JSX.Element => {
 	const multi = Array.isArray(trueAnswer);
 	const thisAnswer: React.ReactNode = multi ? <img src={iconCheck} /> : <span></span>;
 	const multiIndex = multi && trueAnswer.find((a) => a === index);
@@ -23,7 +29,11 @@ const TestAnswer = ({ checkAnswer, renameAnswer, index, trueAnswer, questIndex }
 					type='checkbox'
 					hidden
 					onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-						checkAnswer({ inp: e.currentTarget, questIndex, answerIndex: index });
+						checkAnswer({
+							inp: e.currentTarget,
+							questIndex,
+							answerIndex: index,
+						});
 					}}
 					checked={checked}
 				/>

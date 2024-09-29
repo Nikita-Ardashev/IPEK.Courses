@@ -1,9 +1,6 @@
 import './groups.sass';
 
-import iconArrow from '@img/constructor/arrow.svg';
-import iconClearFilter from '@img/constructor/clearFilter.svg';
-import iconDatepicker from '@img/constructor/datepicker.svg';
-import iconFilter from '@img/constructor/filter.svg';
+import { iconArrow, iconClearFilter, iconDatepicker, iconFilter } from '@assets/assets';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 

@@ -11,11 +11,11 @@ declare module '*.jpg' {
 }
 
 declare module '*.png' {
-	const value: any;
+	const value: string;
 	export default value;
 }
 
 declare module '*.json' {
-	const value: any;
+	const value: string;
 	export default value;
 }

@@ -1,4 +1,4 @@
-@import '../../../../../variables'
+@import '../../../variables'
 
 @mixin field()
     font-family: $Roboto
@@ -32,7 +32,7 @@
     div
         border-radius: 8px
         background: $white-color
-        border: 1px solid mix(change-color(#f0f0f0), black, 90)
+        border: 1px solid mix(change-color(#f0f0f0), black, 90%)
         max-height: 208px
         &::-webkit-scrollbar, &::-webkit-scrollbar-thumb
             border-radius: 0 8px 8px 0 !important
@@ -40,7 +40,5 @@
             @include field()
             input
                 font: inherit
-        span
+        > input
             @include field()
-            p
-                font: inherit

@@ -1,7 +1,8 @@
 import './largeButton.sass';
 
-import iconPencil from '@img/account/pencil.svg';
-import React, { type HtmlHTMLAttributes } from 'react';
+import { iconPencil } from '@assets/assets';
+import { observer } from 'mobx-react-lite';
+import React, { type HtmlHTMLAttributes, memo } from 'react';
 import { Link } from 'react-router-dom';
 
 interface ILargeButton {
@@ -12,19 +13,21 @@ interface ILargeButton {
 	link?: string;
 }
 
-const LargeButton = ({ attr, img, onClick, value, link }: ILargeButton): React.JSX.Element => {
-	if (link !== undefined) {
+const LargeButton = memo(
+	observer(({ attr, img, onClick, value, link }: ILargeButton): React.JSX.Element => {
+		if (link !== undefined) {
+			return (
+				<Link to={link} className='large-button' {...attr}>
+					{value ?? <img src={img ?? iconPencil} alt='' />}
+				</Link>
+			);
+		}
 		return (
-			<Link to={link} className='large-button' {...attr}>
+			<button className='large-button' {...attr} onClick={onClick}>
 				{value ?? <img src={img ?? iconPencil} alt='' />}
-			</Link>
+			</button>
 		);
-	}
-	return (
-		<button className='large-button' {...attr} onClick={onClick}>
-			{value ?? <img src={img ?? iconPencil} alt='' />}
-		</button>
-	);
-};
+	}),
+);
 
 export default LargeButton;

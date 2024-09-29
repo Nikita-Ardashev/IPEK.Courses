@@ -1,6 +1,6 @@
 import './dragLine.sass';
 
-import iconDragline from '@img/constructor/drag.svg';
+import { iconDragline } from '@assets/assets';
 import React, { type ReactNode, type RefObject, useEffect, useRef } from 'react';
 
 interface IDragLine {
@@ -9,7 +9,11 @@ interface IDragLine {
 	boxLeftRef: RefObject<HTMLDivElement | null>;
 }
 
-export const DragLine = ({ boxLeftRef, boxRightRef, boxParentRef }: IDragLine): ReactNode => {
+export const DragLine = ({
+	boxLeftRef,
+	boxRightRef,
+	boxParentRef,
+}: IDragLine): ReactNode => {
 	const dragLineRef = useRef<HTMLButtonElement | null>(null);
 	useEffect(() => {
 		const bLeft = boxLeftRef.current;
@@ -17,7 +21,14 @@ export const DragLine = ({ boxLeftRef, boxRightRef, boxParentRef }: IDragLine): 
 		const bParent = boxParentRef.current;
 		const dr = dragLineRef.current;
 		const html = document.querySelector('html');
-		if (bLeft === null || bRight === null || html === null || bParent === null || dr === null) return;
+		if (
+			bLeft === null ||
+			bRight === null ||
+			html === null ||
+			bParent === null ||
+			dr === null
+		)
+			return;
 		let minSizeInPercent = 20;
 		let wConstructor = bParent.getBoundingClientRect().width;
 		const startDrag = (): void => {
@@ -29,7 +40,8 @@ export const DragLine = ({ boxLeftRef, boxRightRef, boxParentRef }: IDragLine): 
 		const moveDrag = (e: MouseEvent): void => {
 			const { clientX } = e;
 			const padding = (window.innerWidth - wConstructor) / 2;
-			const percentLeft = Math.round(Math.abs((clientX - padding) / wConstructor) * 10000) / 100;
+			const percentLeft =
+				Math.round(Math.abs((clientX - padding) / wConstructor) * 10000) / 100;
 			if (minSizeInPercent > percentLeft) {
 				bLeft.style.width = minSizeInPercent + '%';
 				return;

@@ -1,9 +1,11 @@
 import './header.sass';
 
-import iconAccount from '@img/Account.svg';
-import iconAccountMultiplePlus from '@img/admin/account-multiple-plus.svg';
-import iconAccountPlus from '@img/admin/account-plus.svg';
-import iconCoursePlus from '@img/admin/course-plus.svg';
+import {
+	iconAccount,
+	iconAccountMultiplePlus,
+	iconAccountPlus,
+	iconCoursePlus,
+} from '@assets/assets';
 import Logout from '@img/logout.svg';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -15,7 +17,7 @@ import { type IModalEditType, type IModalType } from '../modal/model/types';
 import HeaderNav from './ui/headerNav/nav';
 
 const Header = (): React.JSX.Element => {
-	const user = store.user?.getProfile;
+	const user = store.profile?.getProfile;
 	const isAdmin = user?.roleName === 'Admin';
 	const isLogin = user !== undefined;
 
@@ -45,7 +47,7 @@ const Header = (): React.JSX.Element => {
 				</Link>
 				{isLogin ? (
 					<div className='header__profile'>
-						<p>{`${user.firstName} ${user.secondName} ${user.thridName}`}</p>
+						<p>{`${user.firstName} ${user.secondName} ${user.thirdName}`}</p>
 						<Link to={'profile'}>
 							<img src={iconAccount} alt='' />
 						</Link>

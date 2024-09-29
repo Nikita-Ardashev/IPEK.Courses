@@ -3,19 +3,17 @@ import { languages } from 'monaco-editor';
 import { storeModel } from './models/store';
 
 export const store = storeModel.create({
-	user: {
+	profile: {
 		id: '1',
 		email: 'nikita.ardashev2521@gmail.com',
 		firstName: 'Ардашев',
 		secondName: 'Никита',
-		thridName: 'Сергеевич',
-		group: 'И-20-3',
+		thirdName: 'Сергеевич',
+		groupId: '0f8cdb6a-f704-450c-82c7-abf2ed43366f',
 		roleName: 'Admin',
-		assignedCourses: [],
-		completedCourses: [],
+		phone: '',
+		password: '',
 	},
 	languages: { langs: languages.getLanguages() },
-	courses: [],
-	groups: [],
-	fetchActionsModel: { courses: {}, groups: {}, user: {} },
+	fetchActionsModel: {},
 });

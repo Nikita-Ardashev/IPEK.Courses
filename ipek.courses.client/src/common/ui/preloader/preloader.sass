@@ -16,6 +16,7 @@
     display: flex
     align-items: center
     justify-content: center
+    z-index: -1
 
 .box-preloader__preloader
     display: block
@@ -23,7 +24,7 @@
     height: 92px
     border: 12px solid transparent
     border-radius: 50%
-    background: linear-gradient(to right, white, white), linear-gradient(to right, transparentify($blue-color, white, 0.1) 50%, $blue-color 100%)
+    background: linear-gradient(to right, white, white), linear-gradient(to right, mix($blue-color, white, 10%) 50%, $blue-color 100%)
     background-clip: padding-box, border-box
     background-origin: padding-box, border-box
     animation: loader 1s linear infinite

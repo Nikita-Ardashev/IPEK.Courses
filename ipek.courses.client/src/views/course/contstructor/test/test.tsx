@@ -1,8 +1,6 @@
 import './test.sass';
 
-import iconDelete from '@img/constructor/delete.svg';
-import iconMultiAnswer from '@img/constructor/multi-answer.svg';
-import iconSingleAnswer from '@img/constructor/single-answer.svg';
+import { iconDelete, iconMultiAnswer, iconSingleAnswer } from '@assets/assets';
 import React, { useMemo, useState } from 'react';
 
 import { type IAnswer, type IConstructorTest, type TTrueAnswers } from '../model/types';
@@ -25,10 +23,23 @@ export interface IRenameAnswer {
 	answerIndex: number;
 }
 
-const questionSingle = JSON.stringify({ id: 0, title: '', answers: ['', '', '', ''], trueAnswer: null });
-const questionMulti = JSON.stringify({ id: 0, title: '', answers: ['', '', '', ''], trueAnswer: [] });
+const questionSingle = JSON.stringify({
+	id: 0,
+	title: '',
+	answers: ['', '', '', ''],
+	trueAnswer: null,
+});
+const questionMulti = JSON.stringify({
+	id: 0,
+	title: '',
+	answers: ['', '', '', ''],
+	trueAnswer: [],
+});
 
-const ConstructorTest = ({ isReadonly = false, content = [] }: IConstructorTest): React.JSX.Element => {
+const ConstructorTest = ({
+	isReadonly = false,
+	content = [],
+}: IConstructorTest): React.JSX.Element => {
 	const [questionList, setQuestionList] = useState<IAnswer[]>(content);
 
 	const checkAnswer = ({ inp, answerIndex, questIndex }: ICheckAnswer): void => {
@@ -114,7 +125,10 @@ const ConstructorTest = ({ isReadonly = false, content = [] }: IConstructorTest)
 				</div>
 				<div className='test-question__answers'>
 					{q.answers.map((a, i) => (
-						<div className='test-question__answer' key={'question' + q.id + 'answer' + i}>
+						<div
+							className='test-question__answer'
+							key={'question' + q.id + 'answer' + i}
+						>
 							<TestAnswer
 								renameAnswer={renameAnswer}
 								checkAnswer={checkAnswer}

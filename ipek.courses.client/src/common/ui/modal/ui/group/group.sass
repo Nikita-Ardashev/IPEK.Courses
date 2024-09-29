@@ -1,0 +1,34 @@
+@import '../../../../../variables'
+
+.modal-groups
+    label, button
+        background: transparent
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        gap: 16px
+
+        p
+            font-family: $Roboto
+            font-size: 24px
+            font-weight: 600
+            line-height: 28.13px
+            text-align: left
+            color: $black-color
+
+        img
+            width: 24px
+            height: 24px
+
+    &__students
+        display: flex
+        flex-direction: column
+        align-items: stretch
+        width: 100%
+        overflow-y: auto
+        max-height: 400px
+        height: 100%
+        scroll-snap-type: y mandatory
+        > div
+            scroll-snap-align: start

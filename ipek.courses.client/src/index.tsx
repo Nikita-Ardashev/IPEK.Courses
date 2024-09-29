@@ -26,7 +26,7 @@ if (root == null) {
 				{ path: 'login', element: <Login /> },
 				{ path: 'profile', element: <Profile /> },
 				{ path: 'group', element: <Group /> },
-				{ path: 'course/edit', element: <CourseEdit /> },
+				{ path: 'course', element: <CourseEdit /> },
 				{ path: 'course/groups', element: <CourseGroups /> },
 				{ path: 'course/constructor/test', element: <Constructor type='test' /> },
 				{ path: 'course/constructor/code', element: <Constructor type='code' /> },

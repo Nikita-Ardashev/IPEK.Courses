@@ -27,18 +27,18 @@ $Ubuntu: 'Ubuntu'
 
 @mixin stateField($color)
 	&:hover
-		background: mix(adjust-color($color), white, 20)
+		background: mix(adjust-color($color), white, 20%)
 
-@mixin stateBtn($color, $isBlack: false)
+@mixin stateBtn($color, $isBlack: false, $hover: 88%, $active: 88%, $focus: 60%, $disabled: 24%)
 	transition: $transition
 	$c: white
 	@if $isBlack
 		$c: black
 	&:hover
-		background: mix(adjust-color($color), $c, 88)
+		background: mix(adjust-color($color), $c, $hover)
 	&:active
-		background: mix(adjust-color($color), $c, 88)
+		background: mix(adjust-color($color), $c, $active)
 	&:focus
-		background: mix(adjust-color($color), $c, 60)
+		background: mix(adjust-color($color), $c, $focus)
 	&:disabled
-		background: mix(adjust-color($color), $c, 24)
+		background: mix(adjust-color($color), $c, $disabled)

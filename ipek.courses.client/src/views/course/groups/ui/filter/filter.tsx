@@ -1,6 +1,6 @@
 import './filter.sass';
 
-import iconCheck from '@img/constructor/check.svg';
+import { iconCheck } from '@assets/assets';
 import React from 'react';
 interface ICourseGroupsFilter {
 	name: string;
@@ -8,7 +8,11 @@ interface ICourseGroupsFilter {
 	dropdownItems: string[];
 }
 
-const CourseGroupsFilter = ({ dropdownItems, img, name }: ICourseGroupsFilter): React.JSX.Element => {
+const CourseGroupsFilter = ({
+	dropdownItems,
+	img,
+	name,
+}: ICourseGroupsFilter): React.JSX.Element => {
 	return (
 		<div className='filter'>
 			<button>

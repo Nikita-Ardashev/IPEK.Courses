@@ -1,17 +1,19 @@
 import './course.sass';
 
-import iconUpload from '@img/admin/upload.svg';
-import React, { type Dispatch, type SetStateAction, useState } from 'react';
+import { iconAdminUpload } from '@assets/assets';
+import chroma from 'chroma-js';
+import React, { useState } from 'react';
 
-import { type ICourse } from '@/common/api/api';
 import CourseCard from '@/common/ui/courseCard/card';
 import { getColor } from '@/common/utils/getColor';
+import { store } from '@/store/store';
 
-import ModalField from '../field/field';
+import ModalField from '../../../field/field';
+import Submit from '../sumbit/submit';
 
 const ModalCourse = (): React.JSX.Element => {
 	const [imgSrc, setImgSrc] = useState<string>('');
-	const [icon, setIcon] = useState<string>('');
+	const [icon, setIcon] = useState<number[]>([]);
 	const [background, setBackground] = useState<string>('rgba(0,0,0,0.4)');
 	const [name, setName] = useState<string>('Название');
 	const [category, setCategory] = useState<string>('Категория');
@@ -25,9 +27,6 @@ const ModalCourse = (): React.JSX.Element => {
 		const t = e.currentTarget;
 		if (t.files === null) return;
 		const file = t.files[0];
-		file.text().then((r) => {
-			setIcon(r);
-		});
 		if (!file.type.includes('svg')) {
 			alert('Разрешены только изображения формата .svg');
 			return;
@@ -37,37 +36,94 @@ const ModalCourse = (): React.JSX.Element => {
 		}
 		const reader = new FileReader();
 		reader.onload = (event) => {
-			const src = event?.target?.result;
-			if (src === null || src === undefined || typeof src !== 'string') return;
+			const src = event?.target?.result ?? false;
+			if (!src) return;
+			if (typeof src !== 'string') {
+				const byteArray = new Uint8Array(src);
+				setIcon(Array.from(byteArray));
+				return;
+			}
 			const img = new Image();
 			img.src = src;
 			img.onload = () => {
-				setBackground(getColor(img));
+				const gC = getColor(img) as number[];
+				const color = chroma.mix(
+					chroma.rgb(gC[0], gC[1], gC[2]),
+					'#000000',
+					0.2,
+					'rgb',
+				);
+				if (color.luminance() < 0.1) {
+					setBackground(
+						chroma
+							.mix(chroma.rgb(gC[0], gC[1], gC[2]), '#fff', 0.8, 'rgb')
+							.css(),
+					);
+				} else if (color.luminance() > 0.5) {
+					setBackground(
+						chroma
+							.mix(chroma.rgb(gC[0], gC[1], gC[2]), '#000', 0.8, 'rgb')
+							.css(),
+					);
+				} else {
+					setBackground(color.css());
+				}
 				img.remove();
 				t.files = null;
 			};
 			setImgSrc(src);
 		};
 		reader.readAsDataURL(file);
+
+		const readerByte = new FileReader();
+		readerByte.onload = (event) => {
+			const src = event?.target?.result ?? false;
+			if (!src) return;
+			if (typeof src !== 'string') {
+				const byteArray = new Uint8Array(src);
+				setIcon(Array.from(byteArray));
+				return;
+			}
+		};
+		readerByte.readAsArrayBuffer(file);
+	};
+	const onCreate = () => {
+		console.log({
+			name,
+			description: 'Test',
+			BackgroundColorCode: background,
+			icon,
+			category,
+		});
+		store.fetchCreateCourse({
+			name,
+			description: 'Test',
+			BackgroundColorCode: background,
+			icon,
+			category,
+		});
 	};
 	return (
-		<div className='modal-course'>
-			<div className='modal-fields'>
-				<ModalField placeholder='Название' onChange={changeName} />
-				<ModalField placeholder='Категория' onChange={changeCategory} />
+		<>
+			<div className='modal-course'>
+				<div className='modal-fields'>
+					<ModalField placeholder='Название' onChange={changeName} />
+					<ModalField placeholder='Категория' onChange={changeCategory} />
+				</div>
+				<label>
+					<input type='file' accept='.svg' hidden onChange={upload} />
+					<img src={iconAdminUpload} alt='' />
+					<p>Загрузить иконку</p>
+				</label>
+				<CourseCard
+					category={category === '' ? 'Категория' : category}
+					name={name === '' ? 'Название' : name}
+					img={imgSrc}
+					background={background}
+				/>
 			</div>
-			<label>
-				<input type='file' hidden onChange={upload} />
-				<img src={iconUpload} alt='' />
-				<p>Загрузить иконку</p>
-			</label>
-			<CourseCard
-				category={category === '' ? 'Категория' : category}
-				name={name === '' ? 'Название' : name}
-				img={imgSrc}
-				background={background}
-			/>
-		</div>
+			<Submit text='Создать' onClick={onCreate} />
+		</>
 	);
 };
 

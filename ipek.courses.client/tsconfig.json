@@ -12,9 +12,16 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"],
-			"@img/*": ["./src/common/assets/img/*"]
+			"@img/*": ["./src/common/assets/img/*"],
+			"@assets/*": ["./src/common/assets/*"]
 		}
 	},
 	"exclude": ["node_modules", "public"],
-	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", "src/common/utils/colorthief.ts"]
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.tsx",
+		"src/**/*.d.ts",
+		"src/common/utils/colorthief.ts",
+		"src/common/utils/getColor.js"
+	]
 }

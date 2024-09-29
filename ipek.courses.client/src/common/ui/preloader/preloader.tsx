@@ -1,13 +1,13 @@
 import './preloader.sass';
 
-import React from 'react';
+import React, { memo } from 'react';
 
-const Preloader = (): React.JSX.Element => {
+const Preloader = memo(function Preloader() {
 	return (
 		<div className='box-preloader'>
 			<span className='box-preloader__preloader'></span>
 		</div>
 	);
-};
+});
 
 export default Preloader;

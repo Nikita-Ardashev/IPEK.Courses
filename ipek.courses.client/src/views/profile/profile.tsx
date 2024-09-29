@@ -1,24 +1,34 @@
 import './profile.sass';
 
-import iconPencil from '@img/account/pencil.svg';
+import { iconPencil } from '@assets/assets';
 import { observer } from 'mobx-react-lite';
-import React from 'react';
+import React, { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import GroupCard from '@/common/ui/groupCard/card';
 import LargeButton from '@/common/ui/largeButton/largeButton';
+import Preloader from '@/common/ui/preloader/preloader';
 import { store } from '@/store/store';
 
 const Profile = observer((): React.JSX.Element => {
-	const profile = store.user?.getProfile;
+	const profile = store.profile?.getProfile;
+	const navigate = useNavigate();
+	if (profile === undefined) {
+		navigate('/');
+		return <Preloader />;
+	}
 	const isEditable = profile?.roleName === 'Admin';
+	const group = useMemo(() => {
+		return store.getGroup(profile.groupId);
+	}, [profile]);
 	return (
 		<div className='profile'>
-			{profile?.roleName === 'Admin' && (
-				<div className='profile__info'>
+			{profile.roleName === 'Admin' && (
+				<div className='profile__heading'>
 					<div>
-						<h2>{`${profile.firstName} ${profile.secondName} ${profile.thridName}`}</h2>
+						<h2>{`${profile.firstName} ${profile.secondName} ${profile.thirdName}`}</h2>
 						<p>{profile.email}</p>
-						<p>{profile.group}</p>
+						<p>{group?.name ?? 'Без имени'}</p>
 					</div>
 					{isEditable && <LargeButton img={iconPencil} />}
 				</div>
@@ -27,12 +37,18 @@ const Profile = observer((): React.JSX.Element => {
 				<h2>Курсы</h2>
 				<div className='profile__courses-row'></div>
 			</div>
-			{profile?.roleName === 'Admin' ? (
+			{profile.roleName === 'Admin' ? (
 				<div className='profile__groups'>
 					<h2>Группы</h2>
 					<div className='profile__groups-row'>
 						{store.getGroups.map((g) => {
-							return <GroupCard key={g.id} nameGroup={g.name} id={g.id} />;
+							return (
+								<GroupCard
+									key={g.id}
+									nameGroup={g.name ?? 'Без имени'}
+									id={g.id}
+								/>
+							);
 						})}
 					</div>
 				</div>

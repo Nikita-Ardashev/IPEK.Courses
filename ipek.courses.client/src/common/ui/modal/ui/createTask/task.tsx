@@ -4,11 +4,11 @@ import React, { useMemo, useState } from 'react';
 
 import { store } from '@/store/store';
 
+import ModalField from '../../../field/field';
 import {
 	type IModalCreateCourseTheme,
 	type IModalTypeCreateTheme,
 } from '../../model/types';
-import ModalField from '../field/field';
 import ModalSwitchBtn from '../switchBtn/switchBtn';
 
 const ModalCourseTask = ({
@@ -30,7 +30,7 @@ const ModalCourseTask = ({
 						<ModalField placeholder='Название' />
 						<ModalField
 							value='Язык программирования'
-							dropdownItems={langNames}
+							dropdown={{ items: langNames }}
 						/>
 					</div>
 				);

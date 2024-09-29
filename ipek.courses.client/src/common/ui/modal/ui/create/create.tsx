@@ -1,13 +1,14 @@
 import './create.sass';
 
+import { observer } from 'mobx-react-lite';
 import React, { useMemo, useState } from 'react';
 
 import { type IModalCreate, type IModalEditType } from '../../model/types';
 import ModalCourse from '../course/course';
-import ModalGroups from '../groups/groups';
+import ModalGroup from '../group/group';
 import ModalStudent from '../student/student';
 import ModalSwitchBtn from '../switchBtn/switchBtn';
-const ModalCreate = ({ type, onCreate }: IModalCreate): React.JSX.Element => {
+const ModalCreate = observer(({ type, onCreate }: IModalCreate): React.JSX.Element => {
 	const [modalType, setModalType] = useState<IModalEditType>(type);
 
 	const dataGroupSave = (): void => {};
@@ -17,7 +18,7 @@ const ModalCreate = ({ type, onCreate }: IModalCreate): React.JSX.Element => {
 	const modal = useMemo(() => {
 		switch (modalType) {
 			case 'group':
-				return <ModalGroups />;
+				return <ModalGroup />;
 			case 'student':
 				return <ModalStudent />;
 			case 'course':
@@ -53,24 +54,8 @@ const ModalCreate = ({ type, onCreate }: IModalCreate): React.JSX.Element => {
 				/>
 			</span>
 			{modal}
-			<button
-				onClick={() => {
-					switch (modalType) {
-						case 'group':
-							dataGroupSave();
-							break;
-						case 'course':
-							dataCourseSave();
-							break;
-					}
-					onCreate();
-				}}
-				className='modal__submit'
-			>
-				Создать
-			</button>
 		</div>
 	);
-};
+});
 
 export default ModalCreate;

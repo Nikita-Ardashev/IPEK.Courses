@@ -1,9 +1,6 @@
 import './notify.sass';
 
-import colseIcon from '@img/account/close.svg';
-import alertIcon from '@img/notify/alert.svg';
-import errorIcon from '@img/notify/error.svg';
-import successIcon from '@img/notify/success.svg';
+import { iconAlert, iconClose, iconError, iconSuccess } from '@assets/assets';
 import React, { useEffect } from 'react';
 interface INotify {
 	type: 'alert' | 'success' | 'error';
@@ -16,11 +13,11 @@ const Notify = ({ text, title, type, onClose }: INotify): React.JSX.Element => {
 	const returnImgNotify = (): string => {
 		switch (type) {
 			case 'alert':
-				return alertIcon;
+				return iconAlert;
 			case 'error':
-				return errorIcon;
+				return iconError;
 			case 'success':
-				return successIcon;
+				return iconSuccess;
 		}
 	};
 	useEffect(() => {
@@ -39,7 +36,7 @@ const Notify = ({ text, title, type, onClose }: INotify): React.JSX.Element => {
 				<span>
 					<h4>{title}</h4>
 					<button type='button'>
-						<img src={colseIcon} alt='' />
+						<img src={iconClose} alt='' />
 					</button>
 				</span>
 				<p>{text}</p>

@@ -1,4 +1,4 @@
-import { flow, Instance, types } from 'mobx-state-tree';
+import { flow, Instance, SnapshotIn, types } from 'mobx-state-tree';
 
 export const langModel = types.model({
 	id: types.string,
@@ -36,10 +36,10 @@ export const fetchModel = types
 		state: types.optional(stateType, 'notStarted'),
 	})
 	.actions((self) => ({
-		setState(state: Instance<typeof self.state>) {
+		setState(state: SnapshotIn<typeof self.state>) {
 			self.state = state;
 		},
-		setError(error: Instance<typeof self.error>) {
+		setError(error: SnapshotIn<typeof self.error>) {
 			self.error = error;
 		},
 		reset() {
@@ -51,13 +51,13 @@ export const fetchModel = types
 export const fetchActionsModel = types
 	.model({})
 	.volatile(() => ({
-		fethes: {} as { [key: string]: typeof fetchModel.Type },
+		fethes: {} as { [key: string]: Instance<typeof fetchModel> },
 	}))
 	.actions((self) => ({
 		addResource(name: string) {
 			self.fethes[name] = fetchModel.create({});
 		},
-		setState(resource: string, state: Instance<typeof stateType>) {
+		setState(resource: string, state: SnapshotIn<typeof stateType>) {
 			self.fethes[resource].setState(state);
 		},
 		setError(resource: string, error: string) {
@@ -68,15 +68,20 @@ export const fetchActionsModel = types
 		},
 	}))
 	.actions((self) => ({
-		fetchData: flow(function* (resource: string, apiCall: () => Promise<any>) {
+		fetchData: flow(function* <T, A extends { [key: string]: any }>(
+			resource: string,
+			apiCall: (args?: A) => Promise<T>,
+			args?: A,
+		) {
 			if (!(resource in self.fethes)) {
 				self.addResource(resource);
 			}
+
 			self.setState(resource, 'loading');
+			const data: T = yield apiCall(args);
 			try {
-				const data = yield apiCall();
 				self.setState(resource, 'done');
-				return data;
+				return data as T;
 			} catch (e) {
 				self.setError(resource, e.toString());
 				self.setState(resource, 'error');
@@ -88,5 +93,11 @@ export const fetchActionsModel = types
 		get getStates() {
 			return self;
 		},
-		getFetch() {},
+		getStateFromName(name: string) {
+			if (self.fethes[name] === undefined)
+				return { state: 'notStarted', error: 'notStarted' } as SnapshotIn<
+					typeof fetchModel
+				>;
+			return self.fethes[name];
+		},
 	}));

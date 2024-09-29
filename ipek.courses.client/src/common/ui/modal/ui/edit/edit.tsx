@@ -2,14 +2,14 @@ import React, { useMemo } from 'react';
 
 import { type IModalEdit } from '../../model/types';
 import ModalCourse from '../course/course';
-import ModalGroups from '../groups/groups';
+import ModalGroup from '../group/group';
 import ModalStudent from '../student/student';
 
 const ModalEdit = ({ type, onCreate }: IModalEdit): React.JSX.Element => {
 	const modal = useMemo(() => {
 		switch (type) {
 			case 'group':
-				return <ModalGroups />;
+				return <ModalGroup />;
 			case 'student':
 				return <ModalStudent />;
 			case 'course':

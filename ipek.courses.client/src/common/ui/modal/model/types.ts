@@ -29,18 +29,19 @@ export interface IModalEdit {
 export type TModalStudent =
 	| 'firstName'
 	| 'secondName'
-	| 'thridName'
-	| 'group'
-	| 'login'
+	| 'thirdName'
+	| 'groupId'
+	| 'email'
 	| 'password';
 
 export interface IModalStudentFields {
-	firstName?: string;
-	secondName?: string;
-	thridName?: string;
-	group?: string;
-	login?: string;
-	password?: string;
+	id: string;
+	firstName: string;
+	secondName: string;
+	thirdName: string;
+	groupId: string;
+	email: string;
+	password: string;
 }
 
 export interface IStudentInGroup {
